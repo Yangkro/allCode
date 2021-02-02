@@ -1,0 +1,431 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	background-color: #f3f5f7 !important;
+}
+.w {
+	width: 1200px;
+	margin: auto;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.boxclear {
+	/* 清除浮动 */
+	clear: both;
+}
+.header {
+	height: 42px;
+	/* background-color: pink; */
+	margin: 30px auto;
+}
+.logo {
+	float: left;
+	width: 198px;
+}
+.nav {
+	float: left;
+	margin-left: 60px;
+}
+.nav ul li {
+	float: left;
+	margin: 0px 15px;
+}
+.nav ul li a {
+	display: block;
+	height: 42px;
+	padding: 0px 10px;
+	line-height: 42px;
+	font-size: 18px;
+	color: #050505;
+}
+.nav ul li a:hover {
+	border-bottom: 2px solid #00a4ff;
+	color: #00a4ff;
+}
+/* 搜索模块 */
+.search {
+	float: left;
+	width: 412px;
+	height: 42px;
+	background-color: skyblue;
+	margin-left: 80px;
+}
+.search input {
+	/* 整个search盒子是浮动的，但是其内部元素不继承父盒子的浮动属性，故添加浮动属性，可以有效解决父盒子容量问题 */
+	float: left;
+	height: 40px;
+	width: 345px;
+	border: 1px solid #00a4ff;
+	border-right: none;
+	font-size: 14px;
+	color: #bfbfbf;
+	padding-left: 15px;
+}
+.search button {
+	float: left; 
+	height: 42px;
+	width: 50px;
+	/* background-color: #00A4FF; */
+	background-image: url(../img/btn.png);
+	border: none;
+}
+.user {
+	float: right;
+	margin-right:30px;
+	line-height: 42px;
+	font-size: 14px;
+	color: #666666;
+}
+.user img {
+	vertical-align: middle;
+}
+/* banner 部分 */
+.banner {
+	background-color: #1c036c;
+	height: 420px;
+}
+.banner .w {
+	height: 420px;
+	background: url(../img/banner2_20190819_210028.png) no-repeat top center;
+}
+.subnav {
+	float: left;
+	width: 150px;
+	height: 420px;
+	background-color: rgba(0,0,0,0.3);
+}
+.subnav ul li {
+	height: 45px;
+	line-height: 45px;
+	padding:0px 20px;
+	/* 继承的权重值为0，a标签默认权重为1，故li中的a标签的字体颜色和大小不会改变 
+	font-size: 14px;
+	color: #ffffff;*/
+}
+.subnav ul li a span {
+	float: right;
+}
+.subnav ul li a {
+	font-size: 14px;
+	color: #ffffff;
+}
+.subnav ul li a:hover {
+	color: #00a4ff;
+}
+/* 课程部分 */
+.course {
+	float: right;
+	height: 300px;
+	width: 230px;
+	background: #fff;
+	/* 浮动的盒子不会有外边距合并问题 */
+	margin-top: 50px;
+}
+.course h2 {
+	height: 48px;
+	font: normal 700 18px "microsoft yahei";
+	color: #ffffff;
+	line-height: 48px;
+	text-align: center;
+	background-color: #9bceea;
+}
+.course .db{
+	padding: 0px 20px;
+}
+.db ul li {
+	padding: 14px 0;
+	border-bottom: 1px solid #efefef;
+	
+}
+.db ul li a {
+	font-size: 14px;
+	color: black;
+}
+.db ul li a span {
+	font-size: 16px;
+}
+.db ul li a p {
+	font-size: 12px;
+	color: #a5a5a5;
+}
+.db .more {
+	display: block;
+	height: 38px;
+	font-size: 16px;
+	color: #00a4ff;
+	font-weight: 700;
+	border: 1px solid #00a4ff;
+	text-align: center;
+	line-height: 38px;
+	margin-top: 5px;
+	
+}
+/* 课程推荐模块 */
+.goods {
+	height: 60px;
+	background-color: #fff;
+	margin-top: 10px;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+	line-height: 60px;
+}
+.goods h3 {
+	float: left;
+	padding: 0px 30px;
+	color: #00a4ff;
+	font: nomal 700 16px "microsoft yahei";
+}
+.goods ul li {
+	float: left;
+}
+.goods ul li a {
+	padding: 0 30px;
+	font-size: 16px;
+	color: #050505;
+	border-left: 1px solid #bfbfbf;
+}
+.goods .mod {
+	float: right;
+	font-size: 14px;
+	color: #00a4ff;
+	padding: 0px 27px;
+}
+/* 课程核心部分 */
+.box {
+	/* overflow: hidden; */
+	margin-top: 35px;
+	height: 633px;
+	background-color: #f3f5f7;
+	/* background-color: #f3f5f7; */
+}
+.box .box-hd {
+	height: 42px;
+}
+.box .box-hd h3 {
+	float: left;
+	color: #494949;
+	font-size: 20px;
+	font-weight: 400;
+}
+.box .box-hd a {
+	float: right;
+	margin: 10px 30px 5px;
+	color: #a5a5a5;
+	font-size: 12px;	
+}
+.box-bd ul li {
+	float: left;
+	width: 228.8px;
+	height: 270px;
+	background-color: #ffffff;
+	margin-right: 14px;
+	margin-bottom: 14px;
+}
+/* 让第五个和第十个盒子没有右边外边距 */
+.box-bd .special {
+	/* 可以单独选出来，去掉外边距，也可以让ul的宽度大一点，反正最后的外边距是看不见的 */
+	margin-right: 0px;
+}
+.box-bd ul li a img {
+	width: 100%;
+}
+.box-bd ul li a h3 {
+	margin: 25px 25px 20px 19px;
+	color: #050505;
+	font-size: 14px;
+	font-weight: 400;
+}
+.box-bd ul li a p {
+	font-size: 12px;
+	margin: 0px 25px 20px 19px;
+	color :#999999;
+}
+.box-bd ul li a p span {
+	color: #ff7c2d;
+}
+/* 编程入门模块 */
+.program {
+	height: 476px;
+	background-color: #f3f5f7;;
+}
+.program_hd {
+	height: 44px;
+}
+.program_hd h3 {
+	float: left;
+	color: #494949;
+	font-size: 20px;
+	font-weight: 400;
+	margin-right: 348px;
+}
+.program_hd>a {
+	float: right;
+	margin: 5px 30px 5px;
+	color: #a5a5a5;
+	font-size: 12px;
+}
+.program_hd ul li {
+	float: left;
+	margin-top: 5px;
+}
+.program_hd ul li a {
+	color: #a5a5a5;
+	font-size: 16px;
+	margin-right: 70px;;
+}
+.program_hd ul li .click {
+	color: #00a4ff;
+}
+.program_hd ul li a:hover {
+	color: #00a4ff;
+}
+.program_bd {
+	height: 435px;
+}
+.program_bd .left_part {
+	float: left;
+	height: 392px;
+	width: 228px;
+	margin-right: 14px;
+}
+.program_bd .right_part {
+	float: left;
+	height: 392px;
+	width: 958px;
+}
+.right_part>img {
+	width: 100%;
+	height: 100px;
+	margin-bottom: 15px;
+}
+.right_part ul {
+	/* 增加ul的宽度，避免将最右边的盒子的右边距去掉，不会影响视觉观感 */
+	width: 972px;
+}
+.right_part ul li {
+	position: relative;
+	float: left;
+	width: 227px;
+	height: 270px;
+	margin-right: 16px;
+	background-color: white;
+}
+.right_part ul li em {
+	position: absolute;
+	top: 4px;
+	right: -4px;
+}
+.right_part ul li a>img {
+	width: 100%;
+}
+.right_part ul li a h3 {
+	margin: 25px 25px 20px 19px;
+	color: #050505;
+	font-size: 14px;
+	font-weight: 400;
+}
+.right_part ul li a p {
+	font-size: 12px;
+	margin: 0px 25px 20px 19px;
+	color :#999999;
+}
+.right_part ul li a p span {
+	color: #ff7c2d;
+}
+/* 机器学习部分 */
+.machine_learning {
+	height: 350px;
+}
+.detial {
+	height: 310px;
+}
+.detial ul {
+	width: 1220px;
+}
+.detial ul li {
+	float: left;
+	width: 230px;
+	height: 270px;
+	margin-right: 14px;
+	background-color: #fff;
+}
+.detial ul li a img {
+	width: 100%;
+}
+.detial ul li a h3 {
+	margin: 25px 25px 20px 19px;
+	color: #050505;
+	font-size: 14px;
+	font-weight: 400;
+}
+.detial ul li a p {
+	font-size: 12px;
+	margin: 0px 25px 20px 19px;
+	color :#999999;
+}
+.detial ul li a p span {
+	color: #ff7c2d;
+}
+.footer {
+	height: 416px;
+	background-color:#fff ;
+	border-top: 1px solid rgba(1,1,1,0);
+}
+.msg {
+	/* 直接写margin-top 会产生塌陷问题，故可以为父盒子定义透明的上边框 */
+	margin-top: 30px;
+	height: 207px;
+	/* background-color: ; */
+}
+.leftpart {
+	float: left;
+	width: 440px;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+.leftpart p {
+	color: #666666;
+	font-size: 12px;
+	font-weight: 400;
+}
+.leftpart a {
+	display: block;
+	height: 35px;
+	width: 118px;
+	margin-top: 15px;
+	border: 1px solid #00a4ff;
+	color: #00a4ff;
+	line-height: 35px;
+	text-align: center;
+}
+.first {
+	float: right;
+	margin-right: 30px;
+}
+.second {
+	float: right;
+	margin-right: 110px;
+}
+.third {
+	float: right;
+	margin-right: 110px;
+}
+.new_height {
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+}
+.new_height a {
+	color: #333333;
+}
+.new_title {
+	margin-top: 5px 0 20px 0;
+	color: #333333 !important;
+	font-size: 16px;
+	font-weight: 400;
+}

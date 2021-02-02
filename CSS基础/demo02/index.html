@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>复合选择器</title>
+		<style>
+			/* 后代选择器 */
+			ol li {
+				color: pink;
+			}
+			ol li a {
+				color: red;
+			}
+			.nav li a {
+				color: aqua;
+			}
+			.head a{
+				/* 对div中的每一个a标签都生效 */
+				font-size: 25px;
+			}
+			.head>a{
+				/* 孩子选择器，只对亲儿子有效 */
+				color: #00FFFF;
+			}
+			div,p {
+				/* 并集选择器 */
+				color: blueviolet;
+			}
+			div,
+			p,
+			.pig li {
+				/* 任何选择器可以作为并集选择器的一部分 */
+				/* 语法习惯：并集选择器习惯竖着写，用逗号隔开，最后一个不需要加逗号 */
+				font-size: 19px;
+			}
+			.text_a a:link {
+				/* 改变没有访问过的链接样式 */
+				color: black;
+				text-decoration: none;
+			}
+			.text_a a:visited {
+				/* 改变已经访问过的链接的样式 */
+				color: purple;
+			}
+			.text_a a:hover {
+				/* 改变鼠标悬浮上面时的样式 */
+				color: blue;
+				text-decoration: underline;
+			}
+			.text_a a:active {
+				/* 改变鼠标按下没有起来时的样式 */
+				color: green;
+			}
+			input:focus {
+				color: skyblue;
+			}
+				
+		</style>
+	</head>
+	<body>
+		<!-- 后代选择器 -->
+		<ol>
+			<li>我是ol的孩子1</li>
+			<li>我是ol的孩子2</li>
+			<li><a href="#">我是ol的孩子3</a></li>
+		</ol>
+		<ul>
+			<li>我是ul的孩子1</li>
+			<li>我是ul的孩子2</li>
+			<li我是ul的孩子3</li>
+		</ul>
+		<ul class="nav">
+			<li>我是ul的孩子1</li>
+			<li>我是ul的孩子2</li>
+			<li><a href="#">我是ul的孩子3</a></li>
+		</ul>
+		<!-- 孩子选择器 -->
+		<div class="head">
+			<a href="#">我是div的亲儿子</a>
+			<p><a href="#">我不是div的亲儿子，我不会变色</a></p>
+		</div>
+		<!-- 并集选择器 -->
+		<div>熊大</div>
+		<p>熊二</p>
+		<span>光头强</span>
+		<ul class="pig">
+			<li>佩奇</li>
+			<li>乔治</li>
+			<li>猪爸爸</li>
+		</ul>
+		<!-- 链接伪类选择器 -->
+		<span class="text_a">
+			<a href="#1">link:没有访问过的链接</a><br/>
+			<a href="#2">visited：已经访问过的链接</a><br/>
+			<a href="#3">hover：鼠标放在上面的链接</a><br/>
+			<a href="#4">active：鼠标按下没有弹起的活动链接</a><br/>
+		</span>
+		<!-- focus伪类表单选择器 -->
+		<input type="text">
+		<input type="text">
+		<input type="text">
+	</body>
+</html>

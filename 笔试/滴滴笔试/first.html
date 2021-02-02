@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function buildBridge(array){
+      let 
+      for(let i = 0; i < array.length; i++){
+        let data = array[i]
+
+      }
+    }
+    function dis (array){
+      let mark = []
+      let dis = []
+      mark[0] = 0
+      let inf = 999999
+      for(let i = 0; i < array.length - 1; i++){
+        let min = [0, 0, inf]
+        for(let j = 0; j < array.length; j++){
+          if(mark[j]){
+            if(array[i][j] < min[2]){
+              min = [i, j, array[i][j]]
+            }
+          }
+        }
+        mark[min[1]] = 0
+        for(let k = 0; k < array.length; k++){
+          if(array[min[i][j]] + dis[min[i]] < dis[k]){
+            dis[k] = array[min[1][k]] + dis[min[1]]
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

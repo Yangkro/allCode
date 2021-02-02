@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+        }
+        .current {
+            transform: rotate(360deg);
+            background-color: skyblue;
+        }
+    </style>
+    <script src="../jQuery.mini.js"></script>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        $(function(){
+            $('.box2').click(function(){
+                $(this).css({
+                    height: 50,
+                    width: '50px',
+                    backgroundColor: "pink"
+                })
+            });
+            // $(".box1").click(function(){
+            //     $(this).addClass('current');
+            // });
+            // $(".box1").click(function(){
+            //     $(this).removeClass('current');
+            // });
+            $(".box1").click(function(){
+                $(this).toggleClass('current');
+            })
+        });
+    </script>
+</body>
+</html>

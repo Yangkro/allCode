@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arrays = [1,1,2];
+			var removeDuplicates = function(nums) {
+			    for(var i = 0; i < nums.length; i++){
+			        for(var j =i + 1; j < nums.length; j++){
+			            if(nums[i] == nums[j]){
+			                //如果相等则删除元素
+			                nums.splice(j,1);
+			                //防止连续多个相同元素在一起会，删除后自动补位，没有进行比较
+			                j--;
+			            }
+			        }
+			    }
+			    return nums;
+			};
+			var result = removeDuplicates(arrays);
+			console.log(result);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function solution(data){
+    let maxSize = 0
+    let i = 0
+    let j = data.length - 1
+    while(i < j){
+      maxSize = Math.max(maxSize, (j - i)*Math.min(data[i], data[j]))
+      if(data[i] <= data[j]){
+        i++
+      }else{
+        j--
+      }
+    }
+    return maxSize
+  }
+  console.log(solution([1,8,6,2,5,4,8,3,7]))
+</script>
+</body>
+</html>

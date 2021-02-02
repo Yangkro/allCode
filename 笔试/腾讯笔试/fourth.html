@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>特殊功能的栈</h1>
+  <script>
+    let stack = []
+    function newStack (str, number){
+      if(str === "push"){
+        stack.push(number)
+      }else if(str === "pop"){
+        let result = stack.pop()
+        console.log(result)
+      }else if(str === "getMin"){
+        let min = stack[0]
+        for(let i = 0; i < stack.length; i++){
+          if(stack[i] < min){
+            min = stack[i]
+          }
+        }
+        console.log(min)
+      }
+      console.log(stack)
+    }
+    newStack("push", 3)
+    newStack("push", 2)
+    newStack("push", 1)
+    newStack("getMin")
+    newStack("pop")
+    newStack("getMin")
+  </script>
+</body>
+</html>

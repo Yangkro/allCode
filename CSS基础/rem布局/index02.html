@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>媒体查询</title>
+		<style>
+			@media screen and (max-width: 540px) {
+				body{
+					/* 当屏幕小于等于800px时颜色会变成粉色 */
+					background: #FFC0CB;
+				}
+			}
+			@media screen and (max-width: 970px) and (min-width: 541px) {
+				body{
+					background: purple;
+				}
+			}
+			/* 媒体查询从小到大有代码优势 ，可以利用样式的层叠性来简化代码，简化代码如下*/
+			@media screen  and (min-width: 541px) {
+				body{
+					background: purple;
+				}
+			}
+			@media screen and (min-width: 971px){
+				/* 大于971px时 */
+				body{
+					background-color: red;
+				}
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

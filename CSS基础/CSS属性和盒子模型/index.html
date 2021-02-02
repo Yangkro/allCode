@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS属性</title>
+		<style>
+			body {
+				color: pink;
+			}
+			p {
+				color: blue;
+			}
+			.title {
+				font: 16px/1.5 "microsoft yahei"
+			}
+			h3 {
+				color: aqua;
+				font-size: 8px;
+			}
+			h4 {
+				/* 优先级：0001 加important后优先级为无穷大 */
+				color: green !important;
+			}
+			.title1 {
+				/* 优先级:0010 */
+				color: black;
+			}
+			#title1 {
+				/* 优先级：0100 */
+				color: blueviolet;
+			}
+			div ul li {
+				/* 0003 */
+				color: red;
+			}
+			.food li {
+				/* 0011 */
+				color :green;
+			}
+			.food ul li {
+				/* 0012 */
+				color: #8A2BE2;
+			}
+			#pig_food ul li {
+				/* 0102 */
+				color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<p>标签的样式冲突时，采用就近原则</p>
+		<!-- CSS属性满足继承性 -->
+		<div class="title">
+			<h2>我没有设置样式，我的样式来自于我的父亲div和我的祖先body</h2>
+			<h3>我设置了颜色样式和字体大小，但是我的行高继承自我的父亲</h3>
+			<h4 class="title1" id="title1" style="color:purple">选择器优先级</h4>
+		</div>
+		<!-- 复合选择器优先级 -->
+		<div class="food" id="pig_food">
+			<ul>
+				<li>红烧肉</li>
+				<li>大猪蹄子</li>
+				<li>酱肘子</li>
+			</ul>
+		</div>
+	</body>
+</html>

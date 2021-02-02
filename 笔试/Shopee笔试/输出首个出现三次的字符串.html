@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function find3Chars( str ) {
+    // write code here
+    let hash = {}
+    for(let i = 0; i < str.length; i++){
+      if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <='Z')){
+          if(hash[str[i]]){
+          hash[str[i]] ++
+          if(hash[str[i]] === 3){
+            return str[i]
+          }
+        }else {
+          hash[str[i]] = 1
+        }
+    }
+  }
+    return ""
+}
+console.log(find3Chars("Have you ever gone shopping and"))
+console.log(find3Chars("HHH"))
+</script>
+</body>
+</html>

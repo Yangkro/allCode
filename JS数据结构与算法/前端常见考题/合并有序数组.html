@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function foo(arr1, arr2){
+    let index1 = 0
+    let index2 = 0
+    let result = []
+    while(index1 < arr1.length && index2 < arr2.length){
+      if(arr1[index1] <= arr2[index2]){
+        result.push(arr1.slice(index1, index1+1)[0])
+        index1++
+      }else{
+        result.push(arr2.slice(index2, index2+1)[0])
+        index2++
+      }
+    }
+    // 没有完全写入的
+    if(index1 < arr1.length){
+      result = result.concat(arr1)
+    }
+    if(index2 < arr2.length){
+      result = result.concat(arr2)
+    }
+    return result
+  }
+</script>
+</body>
+</html>

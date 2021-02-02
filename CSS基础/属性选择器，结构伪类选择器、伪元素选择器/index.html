@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>属性选择器和伪元素选择器</title>
+		<style>
+			
+			        @font-face {
+			            font-family: 'icomoon';
+			            src: url('fonts/icomoon.eot?1lv3na');
+			            src: url('fonts/icomoon.eot?1lv3na#iefix') format('embedded-opentype'),
+			                url('fonts/icomoon.ttf?1lv3na') format('truetype'),
+			                url('fonts/icomoon.woff?1lv3na') format('woff'),
+			                url('fonts/icomoon.svg?1lv3na#icomoon') format('svg');
+			            font-weight: normal;
+			            font-style: normal;
+			            font-display: block;
+			        }
+			    
+			.box1 input {
+				width: 500px;
+				height: 200px;
+				outline: none;
+			}
+			/* 属性选择器 */
+			div input[value] {
+				/* 选择出含有value属性的标签 */
+				border-color: red;
+			}
+			div input[value="123"] {
+				/* 选出value值为123的标签 */
+				height: 100px;
+				color: #FF0000;
+			}
+			[class^="icon"] {
+				/* 可以通过^来匹配class属性值以icon开头的标签 */
+				color: pink;
+			}
+			[class$="data"] {
+				/* 可以通过^来匹配class属性值以data结尾的标签 */
+				font-size: 25px;
+			}
+			[class*="con"] {
+				/* 匹配class值含有con的标签 */
+				background-color: aqua;
+			}
+			/* 结构伪类选择器 */
+			ul li:first-child {
+				/* 选择第一个孩子 */
+				color: blue;
+			}
+			ul li:last-child {
+				/* 选择最后一个孩子 */
+				color: pink;
+			}
+			ul li:nth-child(3) {
+				/* 选择第三个孩子 */
+				color: red;
+			}
+			ul li:first-of-type {
+				/* 选择第一个孩子 */
+				font-size: 18px;
+			}
+			ul li:last-of-type {
+				/* 选择最后一个孩子 */
+				font-size: 18px;
+			}
+			ul li:nth-of-type(4) {
+				/* 选择第四个孩子 */
+				font-size: 18px;
+			}
+			ul li:nth-child(odd) {
+				/* 选择出奇数的孩子 */
+				background-color: ghostwhite;
+			}
+			ul li:nth-of-type(even) {
+				background-color: gainsboro;
+			}
+			/* nth-child(n)和nth-of-type(n)的区别 */
+			section div:nth-child(1) {
+				/* nth-child是先选择第一个，如果不是目标类型，则不改变样式 */
+				color: red;
+			}
+			section div:nth-of-type(1) {
+				/* nth-of-type是先选择div,然后再选择第一个 */
+				color: blue;
+			}
+			article {
+				height: 100px;
+				width: 100px;
+				background-color: pink;
+			}
+			article::before {
+				display: inline-block;
+				content: "我";
+				color: red;
+				height: 50px;
+				background-color: purple;
+			}
+			article::after {
+				content:"学习";
+			}
+			.box3 {
+				position: relative;
+				width: 180px;
+				height: 30px;
+				border: 1px solid #DCDCDC;
+			}
+			.box3::after {
+				position: absolute;
+				content: "\e91e";
+				font-family: "icomoon";
+				top: 10px;
+				right: 10px;
+			}
+			.box4 {
+				position: relative;
+				height: 250px;
+				width: 448px;
+				background-color: pink;
+			}
+			.box4 img {
+				width: 100%;
+				height: 100%;
+			}
+			.box4::before {
+				content: "";
+				display: none;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 448px;
+				height: 250px;
+				background: rgba(0,0,0,0.4) url(img/arr.png) no-repeat center;
+			}
+			/* 下面写法注意 */
+			.box4:hover::before {
+				display: block;
+			}
+			.box5 {
+				height: 200px;
+				width: 200px;
+				background-color: #800080;
+				border: 20px solid red;
+				padding: 20px;
+				box-sizing: content-box;
+			}
+			.box6 {
+				height: 200px;
+				width: 200px;
+				background-color: #800080;
+				border: 20px solid red;
+				padding: 20px;
+				box-sizing: border-box;
+				/* 当鼠标悬浮在当前元素处，0.5s后开始变化 */
+				transition: all 0.5s;
+			}
+			.box6:hover {
+				box-sizing: content-box;
+				background-color: skyblue;
+			}
+			img[alt="tu"] {
+				filter: blur(5px);
+				/* 当鼠标悬浮在当前元素处，两秒后开始变化 */
+				transition: filter 2s ease;
+			}
+			img[alt="tu"]:hover {
+				filter: blur(0px);
+			}
+			.bar {
+				height: 15px;
+				width: 120px;
+				border: 1px solid red;
+				border-radius: 7px;
+			}
+			.bar_in {
+				height: 100%;
+				width: 30%;
+				background-color: red;
+				transition: all 1s;
+			}
+			/* 当鼠标放在bar身上时才变 */
+			.bar:hover .bar_in {
+				width: 100%;
+			}
+			.box7 {
+				position: relative;
+				height: 15px;
+				width: 120px;
+				border: 1px solid red;
+				border-radius: 7px;
+			}
+			.box7::after {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				content: "";
+				height: 100%;
+				width: 30%;
+				background-color: red;
+				/* 谁变写谁身上 */
+				transition: all 1s;
+			}
+			.box7:hover::after{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<input type="search" value="123">
+			<input type="tel" value="1234">
+			<input type="email">
+			<input type="submit">
+			<input type="password">
+		</div>
+		<div class="icon1-data">我是第1个小图标</div>
+		<div class="icon2">我是第2个小图标</div>
+		<div class="con3-data">我是第3个小图标</div>
+		<ul>
+			<li>我是第1个孩子</li>
+			<li>我是第2个孩子</li>
+			<li>我是第3个孩子</li>
+			<li>我是第4个孩子</li>
+			<li>我是第5个孩子</li>
+		</ul>
+		<section>
+			<p>我是section的第一个孩子</p>
+			<div>我是section的第二个孩子</div>
+			<div>我是section的第三个孩子</div>
+		</section>
+		<!-- 伪元素选择器 -->
+		<article>
+			爱
+		</article>
+		<div class="box3"></div>
+		<div class="box4">
+			<img src="img/tudou.jpg" alt="土豆">
+		</div>
+		<div class="box5"></div>
+		<br/>
+		<div class="box6"></div>
+		<img src="img/tudou.jpg" alt="tu">
+		<!-- 进度条 -->
+		<div class="bar">
+			<div class="bar_in"></div>
+		</div>
+		<!-- 用伪元素写 -->
+		<div class="box7"></div>
+	</body>
+</html>

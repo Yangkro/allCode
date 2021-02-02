@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function foo(n){
+  let hash = new Array(n).fill(0)
+  hash[1] = 1
+   hash[2] = 1
+  for(let i = 3; i <= n; i++){
+    hash[i] = hash[i - 1] + hash[i - 2]
+  }
+  for(let i = 1; i <= n; i++){
+    console.log("第"+i+"行")
+    for(let j = 1; j <= i; j++){
+      console.log(hash[j])
+    }
+    for(let j = i - 1; j > 0; j--){
+      console.log(hash[j])
+    }
+  }
+}
+foo(3)
+</script>
+</body>
+</html>

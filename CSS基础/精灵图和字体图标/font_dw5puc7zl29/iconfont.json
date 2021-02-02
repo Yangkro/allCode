@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11488099",
+      "name": "print",
+      "font_class": "print",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "11488118",
+      "name": "save",
+      "font_class": "save",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    },
+    {
+      "icon_id": "11488120",
+      "name": "scanning",
+      "font_class": "scanning",
+      "unicode": "e763",
+      "unicode_decimal": 59235
+    },
+    {
+      "icon_id": "11488150",
+      "name": "smile",
+      "font_class": "smile",
+      "unicode": "e766",
+      "unicode_decimal": 59238
+    },
+    {
+      "icon_id": "11488224",
+      "name": "add-cart-fill",
+      "font_class": "add-cart-fill",
+      "unicode": "e776",
+      "unicode_decimal": 59254
+    }
+  ]
+}

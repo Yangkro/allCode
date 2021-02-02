@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 创建对象
+	let xhr = new XMLHttpRequest()
+	// 告诉Ajax向哪里发送数据
+	xhr.open('get', 'http://localhost:3000/dataResponse')
+	// 发送请求
+	xhr.send()
+	// 监听返回值
+	xhr.onload = function(){
+		let responseText = JSON.parse(xhr.responseText)
+		console.log(responseText)
+		document.body.innerHTML = `<h2>Name：${responseText.name}</h2>`
+	}
+	</script>
+</body>
+</html>

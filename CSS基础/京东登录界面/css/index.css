@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #666;
+}
+div {
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+.box {
+	height: 346px;
+	width: 399px;
+	margin: 50px auto;
+	background-color: pink;
+}
+.tips-wrapper {
+	overflow: hidden;
+	height: 38px;
+	width: 100%;
+	padding: 10px 5px;
+	text-align: center;
+	background-color: #fff8f0;
+}
+.inner-tips {
+	display: inline-block;
+	padding: 0;
+}
+.inner-tips i {
+	float: left;
+	height: 16px;
+	width: 16px;
+	background: url(../img/icon-tips.png) no-repeat;
+	background-size: 16px 16px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.inner-tips span {
+	float: left;
+	font-size: 12px;
+	padding: 0;
+}
+.log-in {
+	display: flex;
+	height: 55px;
+	border-bottom: 1px solid #f4f4f4;
+}
+.log-in li {
+	flex: 1;
+	text-align: center;
+}
+.log-in li a {
+	display: inline-block;
+	height: 25px;
+	font-size: 18px;
+	padding: 0px 63px;
+	border-right: 1px solid #f4f4f4;
+	margin-top: 17px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./queue.js"></script>
+  <script>
+    const muscal = function(nameList, num){
+      // 首先将所有的参与者加入到队列中
+      const queue = new Queue()
+      nameList.forEach(element => {
+        queue.enqueue(element)
+      });
+      let count = 1
+      while(queue.size() != 1){
+        if(count === num){
+          queue.dequeue()
+          count = 1
+        }else {
+          queue.enqueue(queue.dequeue())
+          count ++
+        }
+      }
+      // console.log(queue.front())
+      return queue.front()
+    }
+    const winner = muscal(['A', 'B', 'C', 'D'], 3)
+    console.log(winner)
+  </script>
+</body>
+</html>

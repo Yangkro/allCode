@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery.mini.js"></script>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+        .text {
+            font-size: 20px;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span class="text">hello</span>
+    <script>
+        $(function(){
+            alert("hello");
+            console.dir($("div"));//伪数组
+            console.dir(document.querySelector(".text"));
+            $("div").hide();
+            // $(".text").hide();
+        });
+    </script>
+</body>
+</html>

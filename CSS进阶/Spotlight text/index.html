@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Spotlight text</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			html {
+				font-size: 15px;;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #222;
+				/* 设置高度为视口高度100% */
+				height: 100vh;
+			}
+			h1 {
+				line-height: 100%;
+				position: relative;
+				font-size: 8rem;
+				letter-spacing: -0.3rem;
+				color: #333;
+			}
+			h1::after {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: attr(data-spotlight);
+				color: transparent;
+				
+				background-size: 150%;
+				-ms-clip-path: ellipse(100px 100px at 0% 50%); 
+				-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+				clip-path: ellipse(100px 100px at 0% 50%); 
+				animation-name: spotlight;
+				/* 动画时间为5s */
+				animation-duration: 5s;
+				/* 动画循环播放 */
+				animation-iteration-count: infinite;
+				background-image: url(img/gradienta-eN6FkYAetF8-unsplash.jpg);
+				/* 规定背景的绘制区域为文本部分 */
+				-ms-background-clip: text;
+				-webkit-background-clip: text;
+				background-clip: text;
+				background-position: center center;
+			}
+			@keyframes spotlight{
+				0%{
+				-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+				clip-path: ellipse(100px 100px at 0% 50%) ;
+				}
+				50%{
+					-webkit-clip-path: ellipse(100px 100px at 100% 50%);
+					clip-path: ellipse(100px 100px at 100% 50%) ;
+				}
+				100%{
+					-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+					clip-path: ellipse(100px 100px at 0% 50%) ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1 data-spotlight="HelloWorld!">HelloWorld</h1>
+	</body>
+</html>

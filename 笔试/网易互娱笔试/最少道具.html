@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function solution( harmList ,  totalHarm ) {
+      if(totalHarm < harmList.sort((a, b) => a - b)[0]){
+      return -1
+    }
+    // write code here
+    let dp = new Array(totalHarm+1).fill(Infinity)
+    dp[0] = 0
+    let path = []
+    for(let i = 1; i < totalHarm; i++){
+      for(let j = 0; j < harmList.length; j++){
+        let n = i - harmList[j]
+        if(n >= 0){
+          if(dp[n]+1 < dp[i]){
+            dp[i] = dp[n] + 1
+            path[i] = totalHarm[j]
+          }
+        }
+      }
+    }
+    let sum = path[totalHarm]
+    let res = [sum]
+    totalHarm = totalHarm - sum
+    while(totalHarm > 0){
+      sum = path[totalHarm]
+      res.push(sum)
+      totalHarm = totalHarm - sum
+    }
+    console.log(dp, res)
+}
+solution([1,2,5],11)
+</script>
+</body>
+</html>

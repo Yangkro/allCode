@@ -1,0 +1,29 @@
+body{
+	font: 16px/28px "microsoft yahei"
+	}
+h1 {
+	text-align: center;
+	font-weight: normal;
+	/* line-height: 28px; */
+}
+.gary {
+	color: #888888;
+	font-size: 12px;
+}
+.align {
+	text-align: center;
+}
+a {
+	text-decoration: none;
+}
+p {
+	line-height: 36px;
+	
+}
+.btn {
+	font-weight: 700;
+}
+p {
+	text-indent: 2em;
+	line-height: 34px;
+}

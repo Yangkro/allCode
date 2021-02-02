@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function foo(array){
+    let a = array[0]
+    let b = array[1]
+    let k = array[2]
+    let v = array[3]
+    // 定义一个箱子的最大容量
+    let maxSize = k * v
+    // 一个箱子中可以使用挡板的最大数量
+    let maxNum = k-1
+    // 设箱子个数为i
+    for(let i = 1; i <= Math.ceil(a/v); i++){
+      if(i*(k-1) <= b){
+        // 挡板够用
+        if(i*maxSize>= a){
+          return i
+        }
+      }else{
+        // 挡板已经用完
+        let num = Math.ceil(b / (k-1))
+        if((i - num)*v + num*maxSize >= a){
+          return i
+        }
+      }
+    }
+  }
+console.log(  foo([10, 3, 2, 1]))
+</script>
+</body>
+</html>

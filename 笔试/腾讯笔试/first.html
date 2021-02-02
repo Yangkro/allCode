@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 >字符截断算法</h1>
+  <script>
+    function cutStr(str, len){
+      let length = 0
+      let result = ""
+      for(let i = 0; i < str.length; i++){
+        let s = escape(str[i])
+        // console.log(escape("一"))
+        if(s.charAt(0) === '%'){
+          length = length + 2
+
+        }else {
+          length ++
+        }
+      }
+
+      // 先做出来再优化
+      if(length <= len){
+        console.log(str)
+      }else {
+        // 有问题
+        let count = 0
+        for(let i = 0; i < len - 3; i++){
+          // 最多循环len - 3次
+          let s = escape(str[i])
+          if(s.charAt(0) === '%'){
+            count = count + 2
+            // console.log("==")
+            // console.log(count)
+          }else {
+            count++
+          }
+
+          if(count > len - 3){
+            break
+          }else {
+            result = result + str[i]
+          }
+          
+          
+        }
+        console.log(result+"...")
+      }
+    }
+    cutStr("1234567890", 7)
+    cutStr("一二三四五六七", 8)
+    cutStr("一二133", 5)
+  </script>
+</body>
+</html>

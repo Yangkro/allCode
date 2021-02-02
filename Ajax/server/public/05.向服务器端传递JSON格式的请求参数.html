@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 首先创建一个Ajax对象
+		let xhr= new XMLHttpRequest()
+
+		// 告诉Ajax向那里发送数据
+		xhr.open('post', 'http://localhost:3000/json')
+		// 通过请求头告诉服务器客户端向服务器传递请求的参数格式
+		xhr.setRequestHeader('Content-Type', 'application/json')
+		// 将需要发送的内容发送
+		let message = JSON.stringify({name: 'zhangSan', age: 19})
+		xhr.send(message)
+		// 获取服务器返回的数据
+		xhr.onload = function(){
+			console.log(xhr.responseText)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(number){
+      let flag = ""
+      let result = 0
+      if(number[0] === '-'){
+        number = number.substring(1)
+        flag = '-'
+      }
+      let str = '0123456789abcdefghijklmnopqrstuvwxyz'
+      for(let i = 0; i < number.length; i++){
+        console.log(str.indexOf(number[i]))
+        if(str.indexOf(number[i]) === -1){
+          return 0
+        }
+        result = str.indexOf(number[i])*Math.pow(36, number.length - i - 1) + result
+        if(result >= 9223372036854775807){
+          return 9223372036854775807
+        }
+        console.log(result)
+      }
+      if(flag === '-'){
+        return 0 - result
+      }else {
+        return result
+      }
+    }
+    console.log(foo('zzzzzzzzzzzzz'))
+  </script>
+</body>
+</html>

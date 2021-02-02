@@ -1,0 +1,324 @@
+body {
+	verflow-x: hidden;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: none;
+	-moz-user-select: none;
+	max-width: 540px;
+	min-width: 320px;
+	font: 400 16px/1.5 PingFangSC-regular,Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+	color: #000;
+	margin: 0 auto;
+	background: #fafafc;
+}
+a {
+	text-decoration: none;
+	color: #222222;
+}
+div {
+	box-sizing: border-box;
+}
+ul,ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.search_index {
+	display: flex;
+	/* 固定定位与父级元素没有关系，只跟屏幕有关 */
+	position: fixed;
+	top: 0;
+	/* 居中显示 */
+	left: 50%;
+	transform: translateX(-50%);
+	/* 兼容性 */
+	--webkit-transform: translateX(-50%);
+	width: 100%;
+	height: 44px;
+	/* 需要再次限宽 */
+	max-width: 540px;
+	min-width: 320px;
+	background-color: #ffffff;
+}
+.search {
+	position: relative;
+	flex: 1;
+	height: 28px;
+	border-radius: 15px;
+	padding: 2px 25px;
+	background-color: #ececed;
+	margin: 7px 15px;
+}
+.search::before {
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	content: "";
+	display: block;
+	width: 35px;
+	height: 100%;
+	background: url(../img/sprite_1.png) no-repeat 0px 7px;
+	background-size: 21px auto;
+}
+.user {
+	width: 51px;
+	height: 44px;
+	text-align: center;
+	color: #222222;
+	font-size: 12px;
+}
+.user::before {
+	content: "";
+	display: block;
+	height: 22px;
+	width: 22px;
+	background: url(../img/sprite_1.png) no-repeat 0px -78px;
+	background-size: 21px auto;
+	margin: 2px auto 1px;
+	padding: 0px;
+}
+/* 焦点图部分 */
+.focus {
+	position: relative;
+	padding-top: 44px;
+	/* overflow: hidden; */
+}
+.focus ul li img {
+	width: 100%;
+}
+.focus .focus-ul {
+	width: 500%;
+	overflow: hidden;
+	transform: translateX(-20%);
+}
+.focus-ul li {
+	float: left;
+	width: 20%;
+}
+.focus-ol {
+	position: absolute;
+	bottom: 10%;
+	right: 5%;
+}
+.focus-ol li {
+	float: left;
+	width: 5px;
+	height: 5px;
+	margin-left: 3px;
+	background-color: #fff;
+	border-radius: 2px;
+	transition: all 0.3s; 
+}
+.focus-ol .current {
+	width: 10px;
+	background-color: darkorange;
+}
+/* 局部导航栏 */
+.local_nav {
+	display: flex;
+	height: 64px;
+	margin: 3px 4px;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.local_nav li {
+	flex: 1;
+}
+.local_nav li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.local_nav li a span{
+	font-size: 14px;
+}
+.local_icon{
+	display: block;
+	height: 35px;
+	width: 35px;
+	border-radius: 100%;
+}
+.local_nav li:nth-child(1) .local_icon{
+	background: url(../img/localnav_bg.png) no-repeat 1px 4px;
+	background-size: 32px auto;
+}
+.local_nav li:nth-child(2) .local_icon{
+	background: url(../img/localnav_bg.png) no-repeat 1px -35px;
+	background-size: 35px auto;
+}
+.local_nav li:nth-child(3) .local_icon{
+	background: url(../img/localnav_bg.png) no-repeat 1px -70px;
+	background-size: 35px auto;
+}
+.local_nav li:nth-child(4) .local_icon{
+	background: url(../img/localnav_bg.png) no-repeat 1px -105px;
+	background-size: 35px auto;
+}
+.local_nav li:nth-child(5) .local_icon{
+	background: url(../img/localnav_bg.png) no-repeat 1px -140px;
+	background-size: 35px auto;
+}
+/* 主体部分 */
+nav {
+	/* 添加overflow：hidden，让超出圆角的部分显示出来 */
+	overflow: hidden;
+	margin: 0 4px 4px;
+	border-radius: 8px;
+}
+.nav_common {
+	display: flex;
+	height: 88px;
+	background-color: pink;
+}
+.nav_common:nth-child(2) {
+	/* 为第二个大盒子设置外边距 */
+	margin: 3px 0;
+}
+.common_items {
+	/* 将三个小盒子添加flex 方便再划分 */
+	display: flex;
+	flex-direction: column;
+	/*只会让a标签包裹的文字居中对齐，会缩小a的空间范围 */
+	/* align-items: center; */
+	/* text-align: center 会不改变a标签所占有的空间 */
+	text-align: center;
+	flex: 1;
+}
+.common_items a {
+	flex: 1;
+	line-height: 44px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: rgba(0,0,0,0.2);
+}
+.common_items a:nth-child(1) {
+	/* 为上面的div添加底部边框 */
+	box-sizing: border-box;
+	border-bottom: 1px solid white;
+}
+.common_items:nth-child(1) a {
+	/* 为第一个大盒子除去下边框，要写在后面，否则会出现就近原则，导致不能去掉的问题 */
+	border-bottom: none;
+}
+
+.nav_common:nth-child(1) .common_items:nth-child(1) {
+	background: url(../img/hotel.png) no-repeat center bottom;
+	background-size: 121px auto;
+}
+.nav_common:nth-child(2) .common_items:nth-child(1) {
+	background: url(../img/plane.png) no-repeat center bottom;
+	background-size: 121px auto;
+}
+.nav_common:nth-child(3) .common_items:nth-child(1) {
+	background: url(../img/rest.png) no-repeat center bottom;
+	background-size: 121px auto;
+}
+.common_items:nth-child(n+1) {
+	/* 为后面两个大盒子添加左边框 */
+	border-left: 1px solid white;
+}
+/* 设置颜色渐变 */
+.nav_common:nth-child(1) {
+	background: -webkit-linear-gradient(left,#ff6954,#ff9e49);	
+}
+.nav_common:nth-child(2) {
+	background: -webkit-linear-gradient(left,#448ef3,#49b4f1);
+}
+.nav_common:nth-child(3) {
+	background: -webkit-linear-gradient(left,#2ab2ad,#65c256);
+}
+/* subnav_entry部分 */
+.subnav_entry {
+	display: flex;
+	margin: 0 4px;
+	border-radius: 8px;
+	flex-wrap: wrap;
+}
+.subnav_entry li {
+	/* flex可以写百分比，相对于父级盒子来说的 */
+	flex: 20%;
+
+}
+.subnav_entry li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.subnav_entry li a span {
+	width: 28px;
+	height: 28px;
+	background: url(../img/subnav-bg.png) no-repeat;
+	background-size: 28px auto;
+	margin-top: 5px;
+}
+.subnav_entry li a {
+	font-size: 12px;
+}
+/* sales_box部分 */
+.sales_box {
+	margin: 4px;
+	border-radius: 8px;
+	background-color: #FFF;
+	border-top: 1px solid #C0C0C0;
+}
+.sales_hd {
+	position: relative;
+	height: 44px;
+	border-bottom: 1px solid #ccc;
+}
+.sales_hd h2 {
+	position: relative;
+	margin: 0px;
+	/* 此处不能使用font-size：0；因为后面有after伪元素 */
+	text-indent: -99999px;
+	overflow: hidden;
+}
+.sales_hd h2::after {
+	position: absolute;
+	top: 14px;
+	left: 8px;
+	content: "";
+	width: 79px;
+	height: 15px;
+	background-color: red;
+	background: url(../img/hot.png) no-repeat 0 -20px;
+	background-size: 79px auto;
+}
+.sales_hd a {
+	/* 定位元素，具有块级元素的特点 */
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	color: white;
+	font-size: 14px;
+	padding: 5px 20px 5px 10px;
+	border-radius: 15px;
+	background:-webkit-linear-gradient(left,#FF506C, #FF6BC6)
+}
+.sales_hd a::after {
+	position: absolute;
+	top: 10px;
+	right: 6px;
+	display: block;
+	content: "";
+	height: 10px;
+	width: 10px;
+	border: 2px solid white;
+	border-top: transparent;
+	border-left: transparent;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+.row {
+	display: flex;
+}
+.row:nth-child(-n+2) a {
+	flex: 1;
+	border-bottom: 1px solid #ccc;
+}
+.row a:nth-child(1) {
+	border-right: 1px solid #ccc;
+}
+.row a img {
+	width: 100%;
+}

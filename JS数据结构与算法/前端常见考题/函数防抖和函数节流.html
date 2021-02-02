@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>函数的防抖和节流</h1>
+  <script>
+    // 函数防抖：指的是在事件触发n秒内，回调函数只能触发一次，如果在n秒内再次触发了该事件，那么就重新计算函数执行时间
+    // 延迟n秒执行
+    function debounce(callback, wait){
+      let timer
+      return function(){
+        let context = this
+        let args = arguments
+
+        if(timer){
+          clearTimeout(timer)
+        }
+        timer = setTimeout(()=>{
+          callback.apply(context, args)
+        }, wait)
+      }
+    }
+    // 立刻执行，然后n秒内不执行
+    function debounce2(callback, wait){
+      let timer 
+      return function(){
+        let context = this
+        let args = arguments
+        if(timer){
+          clearTimeout(timer)
+        }
+        let runNow = !timer
+        timer = setTimeout(()=>{
+          timer = null
+        },wait)
+        if(runNow){
+          callback.apply(context, args)
+        }
+      }
+    }
+    // 双剑合璧版防抖函数
+    function debounce3(callback, wait, immediate){
+      /*
+      * callback 是回调函数
+      * wait 是延迟等待事件
+      * immediate 是否立刻执行
+      */
+      let timer
+      return function (){
+        let context = this
+        let args = arguments
+        if(timer){
+          clearTimeout(timer)
+        }
+        if(immediate){
+          let runNow = !timer
+          timer = setTimeout(()=>{
+            timer = null
+          }, wait)
+          if(runNow){
+            callback.apply(context, args)
+          }
+        }else {
+          // 非立即执行函数
+          timer = setTimeout(()=> {
+            callback.apply(context, args)
+          }, wait)
+        }
+      }
+    }
+
+    // 函数节流：在事件触发n秒内这个事件的回调函数只执行一次
+
+    // 事件戳版，利用执行时间的差值来判断是否执行
+    function throttle(callback, delay){
+      let previousTime = Date.now()
+      return function(){
+        let context = this
+        let args = arguments
+        let nowTime = Date.now()
+        // 如果两次时间的差值低于delay那么就执行这个函数
+        if(previousTime - nowTime > delay){
+          callback.apply(context, args)
+          // 更新时间
+          previousTime = Date.now()
+        }
+      }
+    }
+    // 定时器版本的节流
+    function throttle2(callback, delay){
+      let timer
+      return function(){
+        let context = this
+        let args = arguments
+        if(!timer){
+          timer = setTimeout(() => {
+            callback.apply(context, args)
+            timer = null
+          },delay)
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.box1 {
+				display: flex;
+				/* 默认为横向排列 ，可以通过flex-direction来设置为纵向排列*/
+				/* flex-direction: column; */
+				/* 通过justify-content属性来设置排列方式 */
+				/* 默认值为flex-start 从头到尾排列 */
+				/* justify-content: flex-start;  */
+				/* justify-content: flex-end; */
+				/* center 从中间向两边排列 */
+				/* justify-content: center; */
+				/* space-around:平分所有空间 */
+				/* justify-content: space-around; */
+				/* space-between：先贴两边再平分所有空间 */
+				/* justify-content: space-between; */
+				/* 换行 */
+				/* flex-wrap: wrap; */
+				/* 垂直居中 1.先设置水平居中，单行显示，再用align-items来设置垂直居中
+				justify-content: center;
+				align-items: center;*/
+				/* 多行垂直居中 先设置水平居中，再用align-conten来设置垂直居中*/
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: center;
+				margin: 20 auto;
+				height: 400px;
+				width: 600px;
+				background-color: pink;
+			}
+			.box1 span {
+				/* span为行内标签，是不可以设置高度和宽度的，大小会根据内容大小来确定，但是flex会将其转化为块级元素 */
+				height: 100px;
+				width: 100px;
+				background-color: purple;
+				margin-right: 20px;
+			}
+			
+			.box2 {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				margin: 20 auto;
+				height: 400px;
+				width: 600px;
+				margin: 20px;
+				background-color: pink;
+				/* align-content: space-between; */
+			}
+			.box2 span {
+				height: 100px;
+				width: 100px;
+				background-color: purple;
+				margin-right: 20px;
+			}
+			.box2 span:nth-child(7) {
+				/* 设置自己在Y轴上的对齐方式 可以覆盖align-items 但有align-content属性时无效*/
+				align-self: center;
+				order:-1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span>7</span>
+		</div>
+		<div class="box2">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span>7</span>
+		</div>
+	</body>
+</html>

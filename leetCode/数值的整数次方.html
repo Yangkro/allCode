@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function myPow(x, n){
+      if(x === 0){
+        return 0
+      }
+      if(n < 0){
+        n = -n
+        x = 1 / x
+      }
+      let res = 1
+      while(n > 0){
+        if((n & 1) === 1){
+          res = res * x
+        }
+        x = x * x
+        n = Math.floor(n / 2)
+      }
+      return res
+    }
+    console.log(myPow(2, -2147483648))
+    // console.log(myPow(2, 5))
+  </script>
+</body>
+</html>

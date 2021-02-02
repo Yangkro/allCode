@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(str){
+      let stack = []
+      let result = ""
+      for(let i = 0; i < str.length; i++){
+        if(str[i] != " " && i != str.length ){
+          stack.unshift(str[i])
+          console.log(stack)
+        }else {
+          let s = stack.toString().replace(/,/g, "")
+          console.log(s)
+          result = result + s + " "
+          stack = []
+        }
+      }
+    result =  result + str[str.length - 1].replace()
+    }
+    console.log(foo("abc   def ghi"))
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function foo(array){
+  let map = new Map()
+  let stack = []
+  for(let i = 1; i < array.length; i++){
+    if(array[i] != -1 && array[i - 1] != -1){
+      map.set(array[i -1], array[i])
+    }
+  }
+  console.log(map)
+}
+foo([3, 5, 6, -1, -1, 2, 7, -1, -1, 4, -1, -1, 1, 9, -1, -1, 8, -1, -1])
+</script>
+</body>
+</html>

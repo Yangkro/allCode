@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var xhr = new XMLHttpRequest();
+		// // 0 已经创建了ajax对象 但是还没有对ajax对象进行配置
+		// console.log(xhr.readyState);
+		// xhr.open('get', 'http://localhost:3000/readystate');
+		// // 1 已经对ajax对象进行配置 但是还没有发送请求
+		// console.log(xhr.readyState);
+
+		// // 当ajax状态码发生变化的时候出发
+		// xhr.onreadystatechange = function() {
+		// 	// 2 请求已经发送了
+		// 	// 3 已经接收到服务器端的部分数据了
+		// 	// 4 服务器端的响应数据已经接收完成
+		// 	console.log(xhr.readyState);
+		// 	// 对ajax状态码进行判断 如果状态码的值为4就代表数据已经接收完成了
+		// 	if (xhr.readyState == 4) {
+		// 		console.log(xhr.responseText);
+		// 	}
+		// } 
+		// xhr.send();
+		
+
+		// 创建Ajax对象
+		let xhr = new XMLHttpRequest()
+		console.log('此时的Ajax状态码：', xhr.readyState)//0
+		xhr.open('get', 'http://localhost:3000/readystate')
+		// 
+		console.log('此时的Ajax状态码：', xhr.readyState)//1
+		// 在发送之前监听状态的改变
+		xhr.onreadystatechange = function(){
+			// 2表示已经发送
+			// 3表示服务器已经接受到数据了，并且在处理数据（请求正在处理中）
+			// 4表示服务器端的响应数据已经完成了
+				console.log(xhr.readyState)
+				if(xhr.readyState === 4){
+					console.log(xhr.responseText)
+				}
+		}
+   xhr.send()
+	</script>
+</body>
+</html>

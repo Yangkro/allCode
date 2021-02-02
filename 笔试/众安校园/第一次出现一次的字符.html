@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+function FirstNotRepeatingChar(str)
+{
+    // write code here
+    let result = -1
+    for(let i = 0; i < str.length; i++){
+        let s = str.charAt(i)
+        let flag = true
+        for(let j = 0; j < str.length; j++){
+            if(s === str.charAt(j) && i != j){
+                flag = false
+                break
+            }
+        }
+        if(flag){
+          result = i
+          break
+        }
+    }
+     return result
+}
+console.log(FirstNotRepeatingChar("abdcabccccced"))
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getInter( array ,  start ) {
+    // write code here
+    let i = 1
+    let result
+    while(true){
+      if(start === 0){
+        return result
+      }
+      if(!array.includes(i)){
+        start --
+        result = i
+      }
+      i++
+    }
+}
+console.log(getInter([2,3,4,7,11],5))
+  </script>
+</body>
+</html>

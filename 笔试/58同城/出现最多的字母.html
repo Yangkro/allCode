@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(str){
+      let hash = {}
+      for(let i = 0; i < str.length; i++){
+        if(hash[str[i]]){
+          hash[str[i]] ++
+        }else{
+          hash[str[i]] = 1
+        }
+      }
+      let result = ""
+      let num = 0
+      for(let index in hash){
+        if(num < hash[index]){
+          num = hash[index]
+          result = index
+        }
+      }
+      return result
+    }
+    console.log(foo("aaabcddddd"))
+  </script>
+</body>
+</html>

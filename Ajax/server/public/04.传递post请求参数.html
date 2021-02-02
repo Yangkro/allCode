@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		<input type="text" id="username">
+	</p>
+	<p>
+		<input type="text" id="age">
+	</p>
+	<p>
+		<input type="button" value="提交" id="btn">
+	</p>
+	<script type="text/javascript">
+		let username = document.getElementById('username')
+			let age = document.getElementById('age')
+			let btn = document.getElementById('btn')
+			btn.addEventListener('click', function(){
+				// 创建Ajax对象
+				let xhr = new XMLHttpRequest()
+				let nameValue = username.value
+				let ageValue = age.value
+				// 拼接	请求参数
+				let params = `username=${nameValue}&age=${ageValue}`
+				// 配置Ajax对象
+				xhr.open('post', 'http://localhost:3000/post')
+				// post设置请求参数的类型
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+				// 发送请求
+				xhr.send(params)
+				// 获取服务器内容
+				xhr.onload = function(){
+					console.log(xhr.responseText)
+				}
+			})
+	</script>
+</body>
+</html>

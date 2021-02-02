@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var findMedianSortedArrays = function(nums1, nums2) {
+			var result = 0;
+		    var array = nums1.concat(nums2);
+		    array.sort(function(parameter1, parameter2){
+		        return parameter1 - parameter2;
+		    });
+			// return array;
+			console.log(array);
+			var length = array.length;
+		    if(length % 2){
+				var b = Math.ceil(length / 2 -1);
+		        result = array[b];
+		    }else {
+		        var a = length / 2;
+		        result = (array[a] + array[a+1])/2;
+		    }
+			return result;
+		};
+		// console.log(findMedianSortedArrays([1, 3], [2]));
+	</script>
+</body>
+</html>

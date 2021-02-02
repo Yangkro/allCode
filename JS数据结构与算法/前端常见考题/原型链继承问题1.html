@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let f = function(){
+      console.log("...")
+    }
+    Object.prototype.a = function(){
+      console.log("a")
+    }
+    Function.prototype.b = function(){
+      console.log("b")
+    }
+    // let foo2 = new Function()
+    // console.log(foo2.a)
+    let foo = new f()
+    console.log(foo)
+    console.log(foo.a)
+    console.log(foo.b)
+    console.log(Function.__proto__.__proto__)
+    console.log(typeof Function)
+    console.log(typeof Object)
+  </script>
+</body>
+</html>

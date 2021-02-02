@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function fibonacci( n ) {
+    // write code here
+    // if(n <= 2){
+    //   return 1
+    // }
+    // return fibonacci(n-1) + fibonacci(n - 2)
+    let hash = new Array(n).fill(0)
+    hash[1] = 1
+    hash[2] = 1
+    for(let i = 3; i <= n; i++){
+      hash[i] = hash[i - 1] + hash[i - 2]
+    }
+    // console.log(hash)
+    return hash[n]
+}
+console.log(fibonacci(6))
+</script>
+</body>
+</html>

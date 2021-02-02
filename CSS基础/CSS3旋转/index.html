@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS位移旋转</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			li {
+				list-style: none;
+			}
+			.box7 {
+				position: relative;
+				height: 26px;
+				width: 220px;
+				border: 1px solid black;
+			}
+			.box7::after {
+				content: "";
+				position: absolute;
+				right: 10px;
+				top: 5px;
+				height: 10px;
+				width: 10px;
+				border-bottom: 1px solid black;
+				border-right: 1px solid black;
+				transform: rotate(45deg);
+				transition: all 0.2s;
+			}
+			.box7:hover::after {
+				transform: rotate(225deg);
+			}
+			.box1 {
+				height: 50px;
+				width: 50px;
+				background-color: antiquewhite;
+				transform: translate(50px,20px);
+			}
+			.box2 {
+				height: 100px;
+				width: 100px;
+				margin: 0 auto;
+				background-color: aquamarine;
+				transition: all 0.5s;
+				/* 设置旋转中心，默认是50% 50% 可以设置坐标 */
+				transform-origin: left bottom;
+			}
+			.box2:hover {
+				transform: rotate(360deg);
+			}
+			.box3 {
+				overflow: hidden;
+				height: 100px;
+				width: 100px;
+				margin: 0 auto;
+				border: 1px solid pink;
+			}
+			.box4 {
+				/* display: hidden; 应该给父盒子添加溢出隐藏 */
+				height: 100px;
+				width: 100px;
+				/* 不能先平移下来，旋转和平移不能同时使用，先用平移无法实现旋转效果 */
+				/* transform: translate(0px,100px); */
+				transform: rotate(180deg);
+				transform-origin: left bottom;
+				transition: all 0.5s;
+			}
+			
+			.box4 img {
+				height: 100px;
+				width: 100px;
+			}
+			.box3:hover .box4 {
+				transform: rotate(360deg);
+			}
+			.box5 {
+				overflow: hidden;
+				height: 500px;
+				width: 600px;
+				margin: 0 auto;
+			}
+			.box5 img {
+				height: 100%;
+				width: 100%;
+				transition: all 0.3s;
+			}
+			.box5:hover img {
+				transform: scale(1.1);
+			}
+			.box6 {
+				height: 100px;
+				width: 310px;
+				margin: 20px auto;
+				box-sizing: border-box;
+				border: 1px solid black;
+			}
+			.box6 ul {
+				overflow: hidden;
+			}
+			.box6 ul li {
+				float: left;
+				margin: 35px 10px 30px 0px;
+				height: 30px;
+				width: 30px;
+				border-radius: 15px;
+				border: 1px solid greenyellow;
+				text-align: center;
+				transition: all 0.2s;
+			}
+			.box6 ul li:first-child {
+				margin-left: 10px;
+			}
+			.box6 ul li a {
+				text-decoration: none;
+				line-height: 30px;
+				
+			}
+			.box6 ul li:hover {
+				transform: scale(1.2);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 通过transform属性的rotate实现下拉小三角旋转 -->
+		<div class="box7"></div>
+		<!-- 通过transform的translate属性实现平移 -->
+		<div class="box1"></div>
+		<!-- 通过transform-origin，来设置旋转的中心位置 -->
+		<div class="box2"></div>
+		<!-- 旋转中心案例 -->
+		<div class="box3">
+			<div class="box4">
+				<img src="10.jpg" alt="">
+			</div>
+		</div>
+		<!-- 图片缩放案例 -->
+		<div class="box5">
+			<img src="10.jpg" alt="">
+		</div>
+		<div class="box6">
+			<ul>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+				<li><a href="">6</a></li>
+				<li><a href="">7</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

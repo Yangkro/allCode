@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>浮动</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			ul li {
+				list-style: none;
+			}
+			.father {
+				height: 258px;
+				width: 1226px;
+				background-color: pink;
+				margin: 0 auto;
+			}
+			li {
+				width: 296px;
+				height: 258px;
+				float: left;
+				margin-right: 14px;
+				background-color: deeppink;
+			}
+			.demo4 {
+				margin-right: 0px;
+			}
+			.demo1{
+				margin-left: 0px;
+			}
+			.box4,.box5,.box6 {
+				height: 200px;
+				width: 300px;
+				background-color: pink;
+				float: left;
+			}
+			.box1 {
+				height: 100px;
+				width: 100px;
+				background-color: red;
+				float: left;
+			}
+			.box2 {
+				height: 100px;
+				width: 100px;
+				background-color: blueviolet;
+				float: right;
+			}
+			.box3 {
+				/* 会占据box1的位置 */
+				height: 170px;
+				width: 240px;
+				background-color: aqua;
+			}
+			.big_box {
+				height: 200px;
+				width: 100%;
+				background-color: antiquewhite;
+				border: 1px solid red;
+			}
+			.father_box {
+				width: 1533px;
+				height: 575px;
+				border: 1px solid black;
+				margin: 10px auto;
+			}
+			.left {
+				height: 575px;
+				width: 290px;
+				background-color: #005659;
+				float: left;
+			}
+			.right {
+				height: 575px;
+				width: 1243px;
+				background-color: #E13F47;;
+				float: left;
+			}
+			.text a:hover {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+		<div class="big_box">
+		<div class="box4">4</div>
+		<div class="box5">5</div>
+		<div class="box6">6</div>
+		</div>
+		<div class="father_box">
+			<div class="left">左侧</div>
+			<div class="right">右侧</div>
+		</div>
+		<ul class="father">
+			<li class="demo1">1</li>
+			<li class="demo2">2</li>
+			<li class="demo3">3</li>
+			<li class="demo4">4</li>
+		</ul>
+		<div class="text">
+			<a href="#"><span>你好</span></a>
+		</div>
+	</body>
+</html>

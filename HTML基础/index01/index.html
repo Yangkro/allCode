@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HTML的基本语法</title>
+		<link rel="stylesheet" type="text/css" href="myStyle_1.css">
+		<link rel="shortcut icon" href="图片"> <!--用于显示左侧logo图片-->
+		<style type="text/css">
+			h1 {
+				color: antiquewhite;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<!-- HTML标题 -->
+			<h1>我是一级标题</h1>
+			<h2>我是二级标题</h2>
+			<h6>我是六级标题</h6>
+		</div>
+		<div>
+			<!-- HTML链接 -->
+			<!-- 1.外部链接 -->
+			<a href = "https://www.baidu.com">点击我跳转百度</a>
+			<!-- 2.锚点链接 -->
+			<a href="#for_yourselves" >写给自己</a>
+		</div>
+		<div>
+			<!-- HTML图像
+			 有俩属性为高和宽，默认单位为PX（像素）
+			 -->
+			<img src = "img/第一个.PNG" width="396" height="258" alt="第一个图片" title="这是第一个图片" border="1">
+		</div>
+		<!-- HTML表格 -->
+		<table border="" align="center" width="700" cellspacing="0" cellpadding="10" height="100">
+			<caption>花名册</caption>
+			<tr>
+				<th>姓名</th>
+				<th>学号</th>
+				<th>班级</th>
+			</tr>
+			<tr>
+				<td>张三</td>
+				<td>1234</td>
+				<td>1701班</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>2345</td>
+				<td>1702班</td>
+			</tr>
+		</table>
+		<hr/>
+		<h2>单元格联系案例</h2>
+		<table border="1" cellpadding="5" cellspacing="0" width="500">
+		<thead>
+			<caption>小说排行榜</caption>
+			<tr>
+				<th>排名</th>
+				<th>关键词</th>
+				<th>趋势</th>
+				<th>今日搜索</th>
+				<th>最近7日</th>
+				<th>相关链接</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>鬼吹灯</td>
+				<td><img src="img/down.jpg" alt="下降图片"></td>
+				<td>345</td>
+				<td>259</td>
+				<td><a href="https://baike.baidu.com/item/%E9%AC%BC%E5%90%B9%E7%81%AF/10790?fr=aladdin">百度百科</a> <a href="http://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=&sf=1&fmq=1582092209591_R&pv=&ic=&nc=1&z=&hd=&latest=&copyright=&se=1&showtab=0&fb=0&width=&height=&face=0&
+				istype=2&ie=utf-8&sid=&word=%E9%AC%BC%E5%90%B9%E7%81%AF">百度图片</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>盗墓笔记</td>
+				<td><img src="img/down.jpg" alt="下降图片"></td>
+				<td>100</td>
+				<td>231</td>
+				<td><a href="https://baike.baidu.com/item/%E7%9B%97%E5%A2%93%E7%AC%94%E8%AE%B0/6729311">百度百科</a> <a href="http://image.baidu.com/searc
+				h/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=&sf=1&fmq=1582092180529_R&pv=&ic=&nc=1&z=&hd=&latest=&copyright=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&sid=&word=%E7%9B%97%E5%A2%93%E7%AC%94%E8%AE%B0&f=3&oq=%E7%9B%97%E5%A2%93&rsp=0">百度图片</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>西游记</td>
+				<td><img src="img/up.jpg" alt="上升图片"></td>
+				<td>2744</td>
+				<td>909857</td>
+				<td><a href="https://baike.baidu.com/item/%E8%A5%BF%E6%B8%B8%E8%AE%B0/5723">百度百科</a> <a href="http://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=&sf=1&fmq=1582092146531_R&pv=&ic=&nc=1&z=&hd=&latest=&copyright=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie
+				=utf-8&sid=&word=%E8%A5%BF%E6%B8%B8%E8%AE%B0">百度图片</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>三国演义</td>
+				<td><img src="img/up.jpg" alt="上升图片"></td>
+				<td>884</td>
+				<td>56726</td>
+				<td><a href="https://baike.baidu.com/item/%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89/5782">百度百科</a> <a href="http://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89">
+				百度图片</a></td>
+			</tr>
+		</tbody>
+		</table>
+		<div>
+			<!-- 修饰元素 -->
+			<p id="for_yourselves"><i>如果有来生，我要做一棵树，站成永恒</i>，<em>没有悲欢的姿势</em>，<big>一半在尘土里安详</big>，<small>一半在风里飞扬</small>
+			<sup>一半洒落荫凉</sup>，<sub>一半沐浴阳光</sub>，<strong>非常沉默、非常骄傲</strong>。从不依靠、从不寻找。
+			<ins>如果有来生，我要化成一阵风，一瞬间也能成为永恒。</ins>
+			<del>没有善感的情怀，没有多情的眼睛</del>。<u>一半在雨里洒脱，一半在春光里旅行；</u>
+			<bdo dir = "rtl">寂寞了，孤自去远行</bdo>，<bdi dir = "rtl">把淡淡的思念统带走</bdi>，从不思念、从不爱恋。<br/>
+			<code>public static void main(String [] args)</code>
+			<pre>床前明月光，疑是地上霜。
+举头望明月，低头思故乡。
+			</pre>
+			<p>
+				<cite>The Scream</cite> by Edward Munch. Painted in 1893.
+			</p>
+		</div>
+		<div>
+			<h3>列表和表格</h3>
+			<!-- 有序列表 -->
+			<p>有序列表</p>
+			<ol>
+				<li>有序列表第一项</li>
+				<li>有序列表第二项</li>
+				<li>有序列表第三项</li>
+			</ol>
+			<!-- 无序列表 -->
+			<p>无序列表</p>
+			<ul>
+				<li>无序列表第一项</li>
+				<li>无序列表第二项</li>
+				<li>无序列表第三项</li>
+			</ul>
+			
+			<p>自定义列表</p>
+			<dl>
+				<dt>关注我们</dt>
+				<dd>新浪微博</dd>
+				<dd>官方微信</dd>
+				<dd>加入我们</dd>
+			</dl>
+		</div>
+		<div>
+			<!-- 表单标签 -->
+			<form action="xxx.php" method="get">
+				<span><label for="for_username">用户名：</label><input type="text" value="请输入用户名"/ maxlength="6" id="for_username"></span><br/>
+				<span>密码：<input type="password" value=""/></span><br/>
+				<span>性别：<label for="for_male">男</label> <input id="for_male"type="radio" value="男" name="sex" checked="checked">
+				<label for="for_famale">女</label> <input id="for_famale"type="radio" value="女" name="sex"></span><br/>
+				<span>爱好：吃饭<input type="checkbox" name="hobby" value="吃饭" checked="checked" /> 睡觉<input type="checkbox" name="hobby" value="睡觉"/> 打代码<input type="checkbox" value="打代码" name="打代码"/></span><br/>
+				<span>备注：<textarea></textarea></span> <br/>
+				<span><input type="reset" value="重新填写"/></span><br/>
+				<span><input type="submit" value="免费注册"/></span><br/>
+				<!-- 普通按钮不提交数据 -->
+				<span><input type="button" value="获取短信验证码"/></span> <br/>
+				<!-- 上传文件 -->
+				<span>上传头像：<input type="file" ></span> <br/>
+				<!-- 下拉列表 -->
+				户籍所在地：<select>
+					<option>北京市</option>
+					<option selected="selected">河南省</option>
+					<option>河北省</option>
+					<option>山东省</option>
+				</select>
+			</form>
+		</div>
+	</body>
+</html>

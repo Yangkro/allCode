@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQuery.mini.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item"><a href="#">我是ol 的li</a></li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li class="second">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+    <div class="current">俺有current</div>
+    <div>俺木有current</div>
+    <script>
+        $(function(){
+            // 查找父级
+            $("a").parent().css("color", "red");
+            // 查找孩子元素
+            $("ul").children("li").css("font-size", "18px");
+            // 后代选择器
+            $("ul").find("li").css("color", "pink");
+            // 查找不包括自己的兄弟节点
+            $(".second").siblings("li").css("backgroundColor", "blue");
+            // 查找同辈的前面所有元素
+            $(".second").prevAll().css("lineHeight", "50px");
+            // 查找同辈的位于后面的所有元素
+            $(".item").nextAll().css("font-size", "18px");
+            // 判断是否有某个类
+            console.log($(".item").hasClass("item"));//true
+            console.log($(".item").parent().hasClass("item"));//false
+            // eq用法
+            $("ul li:eq(1)").css("font-size", "100px");
+            $("ol li").eq(1).css("backgroundColor", "red");
+        });
+    </script>
+</body>
+
+</html>

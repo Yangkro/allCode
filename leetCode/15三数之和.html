@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var threeSum = function(nums) {
+				// 采用hash表，来记录每一个人的需求
+				let hash =[];
+				let result = [];
+				for(let i = 0; i < nums.length - 1; i++){
+					for(let j = i + 1; j < nums.length; j++){
+						if(hash[nums[j]] != undefined){
+							// 查看有没有队伍需求nums这个元素，有就加入队伍
+							let temple = (hash[nums[j]].concat(nums[j])).sort((a,b) => a-b)
+							result.push(temple)
+							// 找到伙伴了，就不能再找了
+							hash[nums[j]] = undefined
+						}else {
+							// 没有需求就记录它的需求
+							hash[(0 - nums[i] - nums[j])] = [nums[i], nums[j]]
+						}
+					}
+				}
+				// 过滤掉重复的值
+				let set = new Set(result.map(item => JSON.stringify(item)))
+				result = Array.from(set).map(item => JSON.parse(item))
+				// return result
+				if(result.length < 1){
+					return []
+				}else if(result.length < 2){
+					return result[0]
+				} else {
+					return result
+				}
+				
+			};
+			console.log(threeSum([0,0,0]))
+		</script>
+	</body>
+</html>

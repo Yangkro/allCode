@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function addIt(str){
+      if(str.length % 2){
+        let index = Math.floor(str.length / 2)
+        let head = str.substring(0, index)
+        let tail = str.substring(index)
+        return head + "+"+tail
+      }
+    }
+    console.log(addIt("1"))
+  </script>
+</body>
+</html>

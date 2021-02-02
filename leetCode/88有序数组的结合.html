@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var merge = function(nums1, m, nums2, n) {
+			    let num = nums1.concat(nums2)
+				num.sort(function(a, b){
+					return a - b;
+				});
+				num.splice(0, n);
+				return num;
+			};
+			let arr = merge([1,2,3,0,0,0],3,[2,5,6],3);
+			console.log(arr)
+		</script>
+	</body>
+</html>

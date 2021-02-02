@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// function ajax (defaults) {
+		// 	// 存储的是默认值
+		// 	var defaults = {
+		// 		type: 'get',
+		// 		url: '',
+		// 		data: {},
+		// 		header: {
+		// 			'Content-Type': 'application/x-www-form-urlencoded'
+		// 		},
+		// 		success: function () {},
+		// 		error: function () {}
+		// 	};
+
+		// 	// 使用defaults对象中的属性覆盖defaults对象中的属性
+		// 	Object.assign(defaults, defaults);
+
+		// 	// 创建ajax对象
+		// 	var xhr = new XMLHttpRequest();
+		// 	// 拼接请求参数的变量
+		// 	var params = '';
+		// 	// 循环用户传递进来的对象格式参数
+		// 	for (var attr in defaults.data) {
+		// 		// 将参数转换为字符串格式
+		// 		params += attr + '=' + defaults.data[attr] + '&';
+		// 	}
+		// 	// 将参数最后面的&截取掉 
+		// 	// 将截取的结果重新赋值给params变量
+		// 	params = params.substr(0, params.length - 1);
+
+		// 	// 判断请求方式
+		// 	if (defaults.type == 'get') {
+		// 		defaults.url = defaults.url + '?' + params;
+		// 	}
+
+		// 	/*
+		// 		{
+		// 			name: 'zhangsan',
+		// 			age: 20
+		// 		}
+
+		// 		name=zhangsan&age=20
+
+		// 	 */
+
+		// 	// 配置ajax对象
+		// 	xhr.open(defaults.type, defaults.url);
+		// 	// 如果请求方式为post
+		// 	if (defaults.type == 'post') {
+		// 		// 用户希望的向服务器端传递的请求参数的类型
+		// 		var contentType = defaults.header['Content-Type']
+		// 		// 设置请求参数格式的类型
+		// 		xhr.setRequestHeader('Content-Type', contentType);
+		// 		// 判断用户希望的请求参数格式的类型
+		// 		// 如果类型为json
+		// 		if (contentType == 'application/json') {
+		// 			// 向服务器端传递json数据格式的参数
+		// 			xhr.send(JSON.stringify(defaults.data))
+		// 		}else {
+		// 			// 向服务器端传递普通类型的请求参数
+		// 			xhr.send(params);
+		// 		}
+
+		// 	}else {
+		// 		// 发送请求
+		// 		xhr.send();
+		// 	}
+		// 	// 监听xhr对象下面的onload事件
+		// 	// 当xhr对象接收完响应数据后触发
+		// 	xhr.onload = function () {
+
+		// 		// xhr.getResponseHeader()
+		// 		// 获取响应头中的数据
+		// 		var contentType = xhr.getResponseHeader('Content-Type');
+		// 		// 服务器端返回的数据
+		// 		var responseText = xhr.responseText;
+
+		// 		// 如果响应类型中包含applicaition/json
+		// 		if (contentType.includes('application/json')) {
+		// 			// 将json字符串转换为json对象
+		// 			responseText = JSON.parse(responseText)
+		// 		}
+
+		// 		// 当http状态码等于200的时候
+		// 		if (xhr.status == 200) {
+		// 			// 请求成功 调用处理成功情况的函数
+		// 			defaults.success(responseText, xhr);
+		// 		}else {
+		// 			// 请求失败 调用处理失败情况的函数
+		// 			defaults.error(responseText, xhr);
+		// 		}
+		// 	}
+		// }
+
+		// ajax({
+		// 	type: 'post',
+		// 	// 请求地址
+		// 	url: 'http://localhost:3000/responseData',
+		// 	success: function (data) {
+		// 		console.log('这里是success函数');
+		// 		console.log(data)
+		// 	}
+		// })
+
+		/*
+			请求参数要考虑的问题
+
+				1.请求参数位置的问题
+
+					将请求参数传递到ajax函数内部, 在函数内部根据请求方式的不同将请求参数放置在不同的位置
+
+					get 放在请求地址的后面
+
+					post 放在send方法中
+
+				2.请求参数格式的问题
+
+					application/x-www-form-urlencoded
+
+						参数名称=参数值&参数名称=参数值
+
+						name=zhangsan&age=20
+
+					application/json
+						{name: 'zhangsan', age: 20}
+					1.传递对象数据类型对于函数的调用者更加友好
+					2.在函数内部对象数据类型转换为字符串数据类型更加方便
+		*/
+
+		function ajax(options){
+			// 给定一个对象，设置默认值
+			let defaults = {
+				type: 'get',
+				data: {},
+				succcess:function(){},
+				error: function(){},
+				header: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			Object.assign(defaults, options)
+			// 创建AJax对象
+			let xhr = new XMLHttpRequest()
+			// 配置Ajax对象，配置open方法
+				// 获取参数，使用get方法需要拼接字符串
+				let  = params = ""
+				for(let attr in defaults.data){
+					params = params + attr+ '='+defaults.data[attr]+'&'
+				}
+				params = params.substring(0, params.length - 1)
+				// 判断是那个请求方式
+				if(defaults.type === 'get'){
+					defaults.url = defaults.url+'?'+params
+				}
+			xhr.open(defaults.type, defaults.url)
+			// 发送请求
+			if(defaults.type === 'post'){
+				let contentType = defaults.header['Content-Type']
+				// console.log(contentType)
+				if(contentType === 'application/json'){
+					xhr.send(JSON.stringify(defaults.data))
+				}else{
+					xhr.send(params)
+				}
+				
+			}else{
+					xhr.send()
+			}
+
+			// 获取客户端的返回结果
+			xhr.onload = function(){
+				// 将服务器返回的JSON字符串转换成JSON对象，我们需要判断响应头中的Conten-Type属性
+				let responseText = xhr.responseText
+				let contentType = xhr.getResponseHeader('Content-Type')
+				console.log(contentType)
+				if(contentType.includes('application/json')){
+					// 将JSON字符串转化为对象
+					responseText = JSON.parse(responseText)
+				}
+				if(xhr.status === 200){
+					defaults.success(responseText, xhr)
+				}else{
+					defaults.error(responseText, xhr)
+				}
+			}
+		}
+
+		ajax({
+		// type: 'post',
+		 url:'http://localhost:3000/dataResponse',
+		//  请求成功了就调用这个函数
+		 success:function(data){
+			console.log("这里success函数",data)
+		 },
+		//  data:{
+		// 	 name:'zhangsan',
+		// 	 age: 19
+		//  },
+		// //  根据头部类型来判断传输数据的格式
+		// header:{
+		// 	// 'Content-Type':'application/x-www-form-urlencoded'
+		// 	'Content-Type': 'application/json'
+		// },
+		error: function(error, xhr){
+			console.log('错误', error, xhr)
+		}
+		 })
+	</script>
+</body>
+</html>

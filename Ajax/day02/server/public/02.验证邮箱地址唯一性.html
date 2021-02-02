@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证邮箱地址是否已经注册</title>
+	<link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css">
+	<style type="text/css">
+		p:not(:empty) {
+			padding: 15px;
+		}
+		.container {
+			padding-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-group">
+			<label>邮箱地址</label>
+			<input type="email" class="form-control" placeholder="请输入邮箱地址" id="email">
+		</div>
+		<!-- 错误 bg-danger 正确 bg-success -->
+		<p id="info"></p>
+	</div>
+	<script src="/js/ajax.js"></script>
+	<script>
+		// 获取两个元素
+		let emailInput = document.getElementById('email')
+		let info = document.getElementById('info')
+		// 为input标签添加onchange事件
+		emailInput.addEventListener('change', function(){
+			// 先获取input标签里的值
+			let email = this.value
+			// 对邮箱地址进行验证
+			let reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
+			if(!reg.test(email)){
+				// 不符合规则，提示文本，并阻止向下运行
+				info.innerText = '请输入符合规则的邮箱地址'
+				info.classList = 'bg-danger'
+				return
+			}else {
+				// 邮箱地址无误，那么就需要验证邮箱是否使用过
+				ajax({
+					type: 'get',
+					url: 'http://localhost:3000/verifyEmailAdress',
+					data: {
+						email:email
+					},
+					success:function(success){
+						console.log('success:'+success.message
+						)
+						info.innerText = success.message
+						info.classList += 'bg-success'
+					},
+					error: function(error){
+						console.log('error:' + error.message)
+						info.innerText = error.message
+						info.classList += 'bg-danger'
+					}
+				})
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+    <h1>广联达跳舞机</h1>
+    <script>
+      var getSore = (str, target) =>{
+        let len = str.length
+        let sore = 0
+        for(let i = 0; i < len; i++){
+          if(str.charAt(i) === target.charAt(i)){
+            sore = sore + 20
+          }else {
+            if(sore != 0){
+              sore = sore - 10
+            }
+          }
+        }
+        return sore
+      }
+      console.log(getSore("WASDWWSAD", "WASSWWAAD"))
+    </script>
+</body>
+</html>

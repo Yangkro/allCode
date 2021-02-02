@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function foo(array){
+  let result = ""
+  let str = array[0]
+  for(let i = 0; i < str.length; i++){
+    for(let j = 1; j < array.length; j++){
+      if(str[i] != array[j][i]){
+        return result
+      }
+    }
+    result = result + str[i]
+  }
+  return result
+}
+console.log(foo(['flower','flow','flight']))
+</script>
+</body>
+</html>

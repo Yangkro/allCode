@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS动画和3D</title>
+		<style>
+			@keyframes move{
+				0%{
+					/* 所有的位置都是相对于元素本来所在的位置，不是相对位置 */
+					transform: translate(0px,0px);
+				}
+				25%{
+					transform: translate(1000px,0px);
+				}
+				50%{
+					transform: translate(1000px,1000px);
+				}
+				75%{
+					transform: translate(0px,1000px);
+				}
+				100%{
+					transform: translate(0px,0px);
+				}
+			}
+			.box1 {
+				width: 200px;
+				height: 200px;
+				background-color: aquamarine;
+				/* 调用动画 */
+				animation-name: move;
+				/* 持续时间 */
+				animation-duration: 2s;
+				/* 动画播放次数 infinaite一直播放 数字表示次数 */
+				animation-iteration-count: 1.5;
+				/* 动画播放开始时间 1s表示1后开始*/
+				animation-delay: 2s;
+				/* 动画在下一个周期是否逆向播放 alternate */
+				animation-direction: alternate;
+				/* 动画结束时的位置 默认为backwards回到原点 forwards停留在结束位置*/
+				animation-fill-mode: forwards;
+			}
+			@keyframes typing{
+				from{
+					width: 0px;
+				}
+				to{
+					width: 200px;
+				}
+			}
+			.box2 {
+				overflow: hidden;
+				font-size: 20px;
+				width: 0px;
+				height: 22px;
+				white-space: nowrap;
+				animation: typing steps(10) 2s forwards;
+			}
+			.box3 {
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+				background-color: green;
+				/* transform: translateX(100px) translateY(100px) translateZ(100px); */
+				/* 复合写法 */
+				transform: translate3d(100px,100px,0px);
+			}
+			body {
+				perspective: 400px;
+			}
+			.box4 {
+				position: relative;
+				height: 300px;
+				width: 200px;
+				margin: 20px auto;
+				/* 让子元素保持3D立体空间 */
+				transform-style: preserve-3d;
+				transition: all 0.3s;
+			}
+			.box4:hover {
+				transform: rotateY(60deg);
+			}
+			.son1 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: pink;
+				transform: rotateX(45deg);
+			}
+			.son2 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color:greenyellow;
+			}
+			.box5 {
+				position: relative;
+				height: 300px;
+				width: 300px;
+				margin: 20px auto;
+				line-height: 300px;
+				text-align: center;
+				transition: all 0.6s;
+				/* 让孩子有立体空间效果 */
+				transform-style: preserve-3d;
+			}
+			.front,
+			.back {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-radius: 150px;
+				font-size: 50px;
+				font-weight: 700;
+				font-style: italic;
+				color: white;
+			}
+			.front {
+				background-color: pink;
+				z-index: 1;
+			}
+			.back {
+				background-color: purple;
+				-ms-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+			}
+			.box5:hover {
+				-ms-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+			}
+			ul li {
+				width: 120px;
+				height: 35px;
+				list-style: none;
+				perspective: 500px;
+			}
+			ul li .box6 {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transition: all 0.3s;
+				transform-style: preserve-3d;
+			}
+			.box8,
+			.box7 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-radius: 5px;
+				line-height: 35px;
+				color: white;
+				text-align: center;
+				font-size: 20px;
+			}
+			.box7 {
+				z-index: 1;
+				background-color: pink;
+			}
+			.box8 {
+				background-color: #008000;
+				-ms-transform: rotateX(-90deg);
+				transform: rotateX(-90deg);
+			}
+			.box6:hover {
+				transform: rotateX(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<!-- 打字机效果动画 -->
+		<!-- <div class="box2">世纪佳缘我在这里等你</div> -->
+		<!-- <div class="box3"></div> -->
+		<!-- <div class="box4">
+			<div class="son1"></div>
+			<div class="son2"></div>
+		</div> -->
+		<!-- 两面翻转盒子案例 -->
+		<div class="box5">
+			<div class="front">hello</div>
+			<div class="back">world</div>
+		</div>
+		<ul>
+			<li>
+				<div class="box6">
+					<div class="box7">hello</div>
+					<div class="box8">world</div>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

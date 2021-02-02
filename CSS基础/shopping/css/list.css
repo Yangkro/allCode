@@ -1,0 +1,114 @@
+.nav {
+	height: 48px;
+	border-bottom: 2px solid #b1191a;
+	line-height: 48px;
+}
+.second_kill {
+	position: absolute;
+	left: 184px;
+	top: 20px;
+	height: 35px;
+	width: 74px;
+	border-left: 1px solid #c81523;
+	padding: 5px 3px 5px 14px;
+}
+.sk_list ul li {
+	float: left;
+	padding: 0 27px;
+}
+.sk_list ul li a {
+	font-size: 16px;
+	color: #000000;
+	font-weight: 700;
+}
+.sk_con ul {
+	float: right;
+}
+.sk_con ul li {
+	float: left;
+	padding: 0 24px;
+}
+.sk_con ul li a {
+	font-size: 14px;
+}
+.sk_con ul li:last-child a::after {
+	content: "\e91e";
+	font-family: 'icomoon';
+	margin-left: 7px;
+}
+/* 主体部分 */
+.sk_container .sk_hd {
+	height: 120px;
+	width: 100%;
+	margin-bottom: 25px;
+}
+.sk_bd ul li {
+	float: left;
+	width: 291px;
+	height: 462px;
+	margin-right: 12px;
+	margin-bottom: 5px;
+	border: 1px solid transparent;
+}
+.sk_bd ul li:hover {
+	border: 1px solid #b1191a;
+}
+.sk_bd ul li:nth-child(4n) {
+	margin-right: 0px;
+}
+.sk_bd ul li .pic img {
+	width: 100%;
+}
+.sk_bd ul li .text {
+	padding: 0 12px;
+	height: 116px;
+}
+.sk_bd ul li .text h4 {
+	font-size: 14px;
+	font-weight: 400;
+}
+.sk_bd ul li .text .price {
+	font-size: 22px;
+	color: #e60012;
+}
+.sk_bd ul li .text .price del {
+	font-size: 14px;
+	color: #a4a4a4;
+}
+.sk_bd ul li .text .status {
+	position: relative;
+}
+.sk_bd ul li .text .status .left {
+	float: left;
+	display: inline-block;
+}
+.sk_bd ul li .text .status .progress_bar {
+	position: absolute;
+	top: 5px;
+	left: 60px;
+	display: inline-block;
+	height: 12px;
+	width: 132px;
+	border: 1px solid #B1191A;
+	border-radius: 6px;
+}
+.sk_bd ul li .text .status .progress_bar i {
+	display: block;
+	height: 11px;
+	width: 85%;
+	background-color: #B1191A;
+	border-radius: 6px;
+}
+.sk_bd ul li .text .status .right {
+	float: right;
+	display: inline-block;
+}
+.sk_bd ul li a {
+	display: block;
+	height: 52px;
+	font-size: 20px;
+	color: #ffffff;
+	line-height: 52px;
+	text-align: center;
+	background-color: #B1191A;
+}

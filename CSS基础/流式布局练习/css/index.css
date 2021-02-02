@@ -1,0 +1,226 @@
+body {
+	/* 添加一个底部的padding，可以让导航栏不遮住内容 */
+	padding: 45px 0 50px 0;
+	width: 100%;
+	margin: 0 auto;
+	/* 网页拉伸的最大宽度 */
+	max-width: 640px;
+	/* 网页缩小的最小宽度 */
+	min-width: 320px;
+	font-size: 16px;
+	color: #999999;
+	font-family: -apple-system, helvetica,sans-serif;
+	line-height: 1.5;
+	background-color: #ebebeb;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	/* color: #b4b5b6; */
+	color: #999999;
+}
+ul {
+	/* ul本身存在内外边距问题，故去掉内外边距 */
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	vertical-align: top;
+}
+p {
+	padding: 0;
+	margin: 0;
+}
+.head {
+	position: fixed;
+	top: 0;
+	/* 网页拉伸的最大宽度 */
+	max-width: 640px;
+	/* 网页缩小的最小宽度 */
+	min-width: 320px;
+	font-size: 22px;
+	width: 100%;
+	height: 45px;
+	background-color: #ffffff;
+	border-top: 1px solid #44b181;
+}
+.head ul {
+	margin: 0 20px;
+}
+.head ul li {
+	position: relative;
+	float: left;
+	width: 33.33%;
+	/* height: 45px; */
+	/* line-height: 45px; */
+	box-sizing: border-box;
+	text-align: center;
+}
+.head ul li a {
+	font-size: 16px;
+	color: #35424b;
+} 
+ .head ul li:first-child {
+	border-bottom: 2px solid #44B181;
+}
+.head ul li:first-child a {
+	color: #44B181;
+}
+.head ul li:last-child {
+	position: relative;
+}
+.head ul li:nth-child(-n+2) a::after {
+	content: "";
+	position: absolute;
+	right: 0px;
+	top: 15px;
+	height: 14px;
+	width: 1px;
+	border-right: 1px solid #999999;
+}
+.magnifying_glass {
+	position: absolute;
+	right: 3px;
+	top: 15px;
+	width: 18px;
+}
+.magnifying_glass img {
+	width: 100%;
+}
+/* focus图 */
+.focus img {
+	width: 100%;
+}
+/* main_content部分 */
+.main_content {
+	width: 100%;
+	background-color: #ebebeb;
+}
+.main_content ul li {
+	width: 100%;
+	margin-top: 8px;
+	height: 122px;
+	background-color: #fff;
+}
+.main_content ul li .content {
+	/* 如果宽度也为100%，则会向右边无线衍生 */
+	height: 100%;
+	margin: 0 20px;
+}
+.name {
+	font-size: 14px;
+}
+.name i {
+	display: inline-block;
+	font-style: normal;
+	width: 1px;
+	height: 14px;
+	margin: -2px 10px;
+	background-color: #999999;
+}
+.main_pic {
+	position: relative;
+	height: 44px;
+	margin-top: 8px;
+}
+.ball {
+	float: left;
+	width: 13.5%;
+	height: 40px;
+	border-radius: 50%;
+}
+.ball div {
+	width: 40px;
+	height: 40px;
+}
+.ball img {
+	width: 100%;
+}
+.free_listen{
+	float: left;
+	position: relative;
+	bottom: -4px;
+	left: 0;
+	width: 53%;
+	height: 40px;
+}
+.free_listen div {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 145px;
+	height: 30px;
+}
+.free_listen div img {
+	width: 100%;
+	vertical-align: top;
+}
+.have_listen {
+	float: left;
+	position: relative;
+	bottom: -4px;
+	left: 0;
+	width: 33.5%;
+	height: 40px;
+}
+.have_listen div {
+	position: absolute;
+	bottom: 0;
+	right: 70px;
+	width: 20px;
+	height: 20px;
+}
+.have_listen div img {
+	width: 100%;
+}
+.have_listen span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+/* 底部部分 */
+.footer {
+	position: fixed;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	background-color: #f5f7f9;
+	/* 网页拉伸的最大宽度 */
+	max-width: 640px;
+	/* 网页缩小的最小宽度 */
+	min-width: 320px;
+	/* padding: 10px 10px 9px 10px; */
+}
+.footer ul {
+	width: 100%;
+	margin: 10px;
+}
+footer ul li {
+	float: left;
+	position: relative;
+	width: 25%;
+	/* li的高度不能缺少，否则li中多个元素参与定位会引起浮动失效 */
+	height: 30px;
+}
+.footer ul li .pic {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	width: 20px;
+	height: 20px;
+}
+.footer ul li .pic img {
+	width: 100%;
+}
+.footer ul li p {
+	position: absolute; 
+	 top: 20px;
+	left: 26px;
+	width: 28px;
+	font-weight: 400;
+	font-size: 14px;
+	margin: 2px 0 0 0;
+	margin-top: 2px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>demo01</title>
+		<style>
+			/* 标签选择器 */
+			p {
+				color: red;
+				text-align: left;
+				line-height: 16px;
+			}
+			/* 类选择器 */
+			.green {
+				color: green;
+				background-color: green;
+			}
+			.size {
+				font-size: 20px;
+			}
+			div {
+				height: 200px;
+				width: 200px;
+			}
+			.red {
+				background-color: red;
+			}
+			.blod {
+				font-family: "microsoft yahei";
+				/* 字体加粗 设置属性值为blod，等同于数字700*/
+				/* font-weight: bold; */
+				font-weight: 700;
+			}
+			.font1 {
+				/* 使用复合属性必须有font-size和font-family */
+				font: normal 700 20px "microsoft yahei"
+				/* font-family: "microsoft sans serif";
+				font-size: 20px;
+				font-style: italic;
+				font-weight: 700; */
+			}
+			.indent {
+				text-indent: 2em;
+				text-decoration: underline;
+			}
+			.font_style {
+				font-style: normal;
+			}
+		</style>
+	</head>
+	<body>
+		<p>hello</p>
+		<ul class="green">
+			<li class="size">盗将行</li>
+			<li>清明雨上</li>
+			<li>会呼吸的痛</li>
+		</ul>
+		<!-- 基础选择器练习 -->
+		<div class="red size">红色</div>
+		<div class="green size">绿色</div>
+		<div class="red">红色</div>
+		<p class="font1">离离原上草</p>
+		<p>一岁一枯荣</p>
+		<p>野火烧不尽</p>
+		<p class="blod">春风吹又生</p>
+		<p class="indent">表达杜甫晚年对诗歌创作的见解，带有总结性质。所以王嗣奭《杜臆》说：“此公一生精力用之文章，始成一部《杜诗》，
+		而此篇乃其自序也。”</p><p>上句“千古事”是指留传久远，关系重大，如同曹丕说的“文章经国之大业，不朽之盛事”。</p>
+		<em class="font_style">下句“寸心知”是说对于文章，作者本人的理解感知最为明白</em>。<p>这两句诗虽是以议论入诗，
+		但对仗工整，语言高度概括，而且切中肯綮，含蕴丰富，很有哲理性。</p>
+	</body>
+</html>

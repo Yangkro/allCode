@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css">
+	<style type="text/css">
+		.container {
+			padding-top: 60px;
+		}
+		.padding {
+			padding: 5px 0 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-group">
+			<label>请选择文件</label>
+			<input type="file" id="file">
+			<div class="padding" id="box">
+			</div>
+			<div class="progress">
+				<div class="progress-bar" style="width: 0%;" id="bar">0%</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let bar = document.getElementById('bar')
+		let file = document.getElementById('file')
+		// 为文件选择控件添加onchange事件
+		file.onchange = function(){
+			// 创建一个空的formData对象
+			let formData = new FormData()
+			// files这个集合中包含了所有用户选择的文件，不支持多选的时候，就是第一个文件
+			// 将文件追加到formData对象中,第一个参数时数据的name属性
+			formData.append('attrName', this.files[0])
+			let xhr = new XMLHttpRequest()
+			xhr.open('post', 'http://localhost:3000/upload')
+			xhr.upload.onprogress = function(ev){
+				//在文件上传的过程中会持续的触发这个事件
+				// 在事件推向中有一个ev.loaded表示文件已经上传多少
+				// ev.total表示文件一共有多少
+				let result = (ev.loaded / ev.total)* 100 + "%"
+				// 设置进度条的宽度
+				bar.style.width = result
+				bar.innerHTML = result
+			}
+			xhr.send(formData)
+			// 监听数据响应
+			xhr.onload = function(){
+				// 当请求成功时
+				if(xhr.status === 200){
+					// 将上传的图片显示出来
+					let responseText = JSON.parse(xhr.responseText)
+					console.log(responseText)
+					let img = document.createElement('img')
+					img.src = responseText.path
+					let box = document.getElementById('box')
+					// 当图片加载完成后再追加到页面中
+					img.onload = function(){
+						box.append(img)
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

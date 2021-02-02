@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>常见布局技巧</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.box1 ul li {
+				position: relative;
+				float: left;
+				list-style: none;
+				height: 200px;
+				width: 180px;
+				border: 1px solid red;
+				/* 因为有边框，所有重叠部分边框会加粗，故添加margin-left：-1px; */
+				margin-left: -1px;
+			}
+			.box1 ul li:hover {
+				/* 这种方法会受到缩放比例的影响 */
+				z-index: 2;
+				/* 因为会左边的盒子的有边框会被压住，直接写肯定不行，当盒子中没有定位时，添加相对定位（保留原来位置）,当父盒子也有定位时用z-index提高层数，优先显示*/
+				border: 1px solid blue;
+			}
+			.box2 {
+				text-align: center;
+				font-size: 14px;
+			}
+			.box2 a {
+				display: inline-block;
+				height: 36px;
+				width: 36px;
+				color: #333;
+				border: 1px solid #333333;
+				text-decoration: none;
+				font-size: 14px;
+				line-height: 36px;
+				background-color: #F5F5F5;
+			}
+			.box2 .pre,.box2 .next {
+				width: 80px;
+			}
+			.box2 .curent {
+				background-color: white;
+				border: none;
+			}
+			.box2 input {
+				width: 60px;
+				height: 36px;
+				outline: none;
+				margin: 0px 5px;
+				border: 1px solid #333333;
+			}
+			.box2 button {
+				height: 36px;
+				border: 1px solid #333333;
+				background-color: #F5F5F5;
+				width: 36px;
+				border-radius: 5px;
+			}
+			.box3 {
+				width: 180px;
+				height: 36px;
+				border: 1px solid red;
+				margin: 100px auto;
+				line-height: 36px;
+				font-size: 14px;
+			}
+			.box3 span{
+				/* 浮动可以转化为行内块元素 */
+				float: left;
+				/* 子绝父相 */
+				position: relative;
+				font-weight: 700px;
+				color: white;
+				background-color: red;
+				width: 110px;
+			}
+			.box3 del {
+				float: right;
+				color: #A7A9A6;
+			}
+			.miaosha i {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 0px;
+				height: 0px;
+				border-color: transparent white transparent transparent;
+				border-style: solid;
+				border-width: 36px 20px 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="box1">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<!-- 行内块元素的妙用 -->
+		</div>
+		<br/> -->
+		<div class="box2">
+			<a href="#" class="pre">&lt;&lt;上一页</a>
+			<a href="#" class="curent">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+			<a href="#">6</a>
+			<a href="#" class="curent">...</a>
+			<a href="#" class="next">&gt;&gt;下一页</a>
+			共10页 到第
+			<input type="text" class="">页
+			<button>确定</button>
+		</div>
+		<div class="box3">
+			<span class="miaosha">￥1650.00
+			<i></i>
+			</span>
+			
+			<del>￥5088.00</del>
+		</div>
+	</body>
+</html>

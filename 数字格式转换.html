@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数字格式转换</title>
+		<style>
+			ul li {
+				list-style: none;
+			}
+			input[placeholder] {
+				height: 35px;
+				width: 300px;
+				outline: none;
+				border: 1px solid antiquewhite;
+				margin: 20px 0px;
+				padding: 5px;
+			}
+			
+			.box {
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="get" name="form1">
+			<input type="text" placeholder="请输入数字" name="str"></br>
+			<input type="text" placeholder="情输入要转换的长度" name="le"></br>
+			<input type="text" name="laststr" id="laststr" style="height: 30px; width: 200px;"></br>
+			<button type="button" onclick="deal()">提交</button>
+			<input type="reset" value="重置">
+		</form>
+	<script type="text/javascript">
+		var str = document.getElementsByName(str);
+		var len = document.getElementsByName(le);
+		function deal() {
+			if(str.value="")
+			{
+				alert("请输入格式化的数字");
+				str.focus();
+				return false;
+			}
+			if(isNaN(str.value)){
+				alert("您输入的数字不正确");
+				str.focus();
+				return false;
+			}
+			if(le.value="")
+			{
+				alert("请输入格式化后的长度");
+				le.focus();
+				return false;
+			}
+			if(isNaN(le.value)){
+				alert("您输入的格式化后的长度不正确");
+				le.focus;
+				return false;
+			}
+			
+		}
+		function formatNO(str,le){
+			if(typeof str !== "number" || typeof le !== "number") {
+				throw 'Not a number';
+			}
+			if(arguments.length == 2) {
+				var a = arguments[0];
+				var b = arguments[1];
+				alert("str="+a);
+				alert("len="+b);
+			}
+			// 传入的参数都是数字，所以应该将str转换为字符串
+			var str = str.toString();
+			var strLen=str.length;
+			for(i=0; i<len-strLen;i++) {
+				str="0"+str;
+			}
+			return str;
+		}
+		
+	</script>
+	</body>
+</html>

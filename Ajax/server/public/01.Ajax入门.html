@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 创建Ajax对象
+		let xhr = new XMLHttpRequest()
+	// 告诉Ajax向哪里发送请求，使用open方法，参数为：（请求方式，请求地址）
+		xhr.open('get', 'http://localhost:3000/first')
+	// 发送请求 使用send方法
+		xhr.send()
+	// 获取服务器的响应数据，使用onload监听
+	xhr.onload = function(){
+		console.log(xhr.responseText)
+	}
+	</script>
+</body>
+</html>

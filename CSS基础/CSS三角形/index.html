@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS三角形和鼠标光标</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			.box1 {
+				height: 0px;
+				width: 0px;
+				border-top: 20px solid pink;
+				border-bottom: 20px solid red;
+				border-right: 20px solid green;
+				border-left: 20px solid blue;
+			}
+			.box2{
+				height: 0;
+				width: 0;
+				border: 20px solid transparent;
+				border-top: 20px solid #FFC0CB;
+			}
+			.jd {
+				position: relative;
+				height: 300px;
+				width: 200px;
+				background-color: pink;
+				margin: 100px auto;
+			}
+			span {
+				position: absolute;
+				left: 50%;
+				margin-left: -30px;
+				top: -60px;	
+				height: 0px;
+				width: 0px;
+				/* 为了增加浏览器的兼容性，故添加这两行代码 */
+				line-height: 0px;
+				font-size: 0px;
+				border: 30px solid transparent;
+				border-bottom: 30px solid pink;
+			}
+			.box3 {
+				height: 200px;
+				width: 200px;
+				background-color: goldenrod;
+				margin: 100px auto;
+			}
+			.box3 ul li {
+				font-size: 20px;
+				height: 30px;
+				line-height: 30px;
+				color: red;
+			}
+			.box4 {
+				height: 200px;
+				width: 200px;
+				background-color: pink;
+				margin-bottom: 20px;
+				/* 单行省略号 */
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.box5 {
+				/* 调整行高，使其只能显示两行 */
+				height: 48px;
+				width: 200px;
+				background-color: green;
+				margin-bottom: 20px;
+				/* 多行省略号 */
+				overflow: hidden;
+				text-overflow: ellipsis;
+				/*弹性伸缩盒子模型显示*/
+				display: -webkit-box;
+				/*限制在一个块元素显示的文本的行数*/
+				-webkit-line-clamp: 2;
+				/*设置或检索伸缩盒子对象的子元素的排列问题*/
+				-webkit-box-orient: vertical;
+			}
+			.box6 {
+				height: 0px;
+				width: 0px;
+				line-height: 0px;
+				font-size: 0px;
+				border-color: transparent red transparent transparent;
+				/* border-color: blue red green gold; */
+				border-style: solid;
+				border-width: 20px 50px 0px 0px;
+			}
+			.box7 {
+				position: relative;
+				height: 26px;
+				width: 220px;
+				border: 1px solid black;
+				margin: 20px 20px;
+			}
+			.box7::after {
+				content: "";
+				position: absolute;
+				right: 10px;
+				top: 5px;
+				height: 10px;
+				width: 10px;
+				border-bottom: 1px solid black;
+				border-right: 1px solid black;
+				transform: rotate(45deg);
+				transition: all 0.2s;
+			}
+			.box7:hover::after {
+				transform: rotate(225deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="jd">
+			<span></span>
+		</div>
+		<div class="box3">
+			<ul>
+				<li style="cursor: default">默认</li>
+				<li style="cursor: pointer">小手</li>
+				<li style="cursor: move">移动</li>
+				<li style="cursor: text">文本</li>
+				<li style="cursor: not-allowed">禁止</li>
+			</ul>
+			<!-- 为文本框 -->
+			<input type="text" style="outline: none;">
+			<!--取消聚焦外边框显示和拖拽效果  -->
+			<textarea style="resize: none; outline: none"></textarea>
+		</div>
+		<div class="box4">定位：定位是为了解决浮动和标准流无法解决的位置问题，
+		所以定位也是在摆放盒子，或者按照定位的方式移动盒子（定位=定位模式+边偏移</div>
+		<div class="box5">定位：定位是为了解决浮动和标准流无法解决的位置问题，</div>
+		<div class="box6"></div>
+		<div class="box7"></div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getCount(str){
+      let flag = true
+      let count = 0
+      if(str === ""){
+        return 0
+      }
+      while(flag){
+        if(str === "")
+        {
+          return count
+        }
+        let oldStr = str
+        for( let i = 0; i < str.length; i++){
+          let j = i + 1
+          if(str[i] === str[j]){
+            let head = str.substring(0, i)
+            let tail = str.substring(j+1)
+            str = head + tail
+            count ++
+          }
+        }
+        if(oldStr === str){
+          return count
+        }else {
+          getCount(str)
+        }
+      }
+    }
+    let result = getCount("43211234")
+    console.log(result)
+    console.log(getCount("101"))
+  </script>
+</body>
+</html>

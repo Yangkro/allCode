@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    字符匹配问题
+  </h1>
+  <script>
+    function check(str){
+      let result = true
+      let hasNumber = 0
+      let hasLetter = 0
+      if((str.charAt(0) >= 'A' && str.charAt(0) <= 'Z') || (str.charAt(0) >= 'a' && str.charAt(0) <= 'z')){
+        result = true
+      }else {
+        // print("Wrong")
+        console.log("Wrong")
+        return
+      }
+      for(let i = 0; i < str.length; i++){
+        if((str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') || (str.charAt(i) >= 'a' && str.charAt(i) <= 'z')){
+          hasLetter ++
+        }else if((str.charAt(i) >= '0' && str.charAt(i) <= '9')){
+          hasNumber ++
+        }else {
+        // print("Wrong")
+        console.log("Wrong")
+        return
+        }
+      }
+      if(hasNumber === 0 || hasLetter === 0){
+        result = false
+      }
+      if(result){
+        // print("Accept")
+        console.log("Accept")
+      }else {
+        // print("Wrong")
+        console.log("Wrong")
+      }
+    }
+
+    check("Ooook")
+    check("Hhhh666")
+    check("6666")
+    check("")
+    check("abc12_")
+    check("ABCs")
+    check("S")
+    check("h6")
+  </script>
+</body>
+</html>

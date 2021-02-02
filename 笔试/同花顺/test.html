@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      position: relative;
+      left: 33%;
+      width: 300px;
+      height: 100px;
+      background-color: red;
+      transform: translateX(-50%);
+    }
+    .box >.btn1{
+      float: left;
+    }
+    .box>.btn2{
+      float: right;
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      padding: 10px 30px 20px 40px;
+      margin: 10px 20px 30px 40px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <button class="btn1">按钮1</button>
+    <button class="btn2">按钮二</button>
+  </div>
+  <div class="box2"></div>
+</body>
+</html>

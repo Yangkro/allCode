@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="rankedList.js"></script>
+  <script>
+    let rankedlist = new rankedList()
+    rankedlist.add("A")
+    rankedlist.add("B")
+    rankedlist.add("C")
+    console.log(rankedlist)
+    rankedlist.insert(1, "b")
+    console.log(rankedlist)
+    rankedlist.remove(0)
+    console.log(rankedlist)
+    console.log(rankedlist.getElementByIndex(2))
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS定位</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			body{
+				height: 5000px;
+			}
+			.box1 {
+				position: absolute;
+				left: 0px;
+				height: 500px;
+				width: 500px;
+				background-color: skyblue;
+				opacity: 0.5;
+			}
+			.box2 {
+				/* 当我把box2的绝对定位信息注释后，3号box会占有box2的位置 */
+				position: absolute;
+				top: 20px;
+				left: 10px;
+				height: 100px;
+				width: 100px;
+				background-color: pink;
+				opacity: 0.5;
+			}
+			.box3 {
+				height: 100px;
+				width: 100px;
+				background-color: aqua;
+				opacity: 0.5;
+			}
+			.box4 {
+				width: 1200px;
+				margin: 0 auto;
+				height: 1900px;
+				background-color: #00FFFF;
+			}
+			.box5 {
+				width: 100px;
+				height: 200px;
+				background-color: orange;
+				position: fixed;
+				top: 300px;
+				left: 50%;
+				margin-left: 600px;
+			}
+			.box6 {
+				margin: 200px auto;
+				width: 700px;
+				height: 200px;
+				background-color: #235678;
+				position: sticky;
+				/* 表示距离顶部距离为0 的时候就不随滚动条移动了 */
+				top: 0px;
+			}
+			.box7 {
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background-color: red;
+				/* 有定位的元素可以通过z-index来提升层叠次序，数值越大优先级越高，否则就后来居上*/
+				z-index: 2;
+			}
+			.box8 {
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background-color: blue;
+			}
+			.box9 {
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				top: 40px;
+				left: 40px;
+				background-color: orange;
+			}
+			.box10 {
+				height: 500px;
+				width: 500px;
+				background-color: pink;
+				position: relative;
+				margin: 0 auto;
+				top: 50%;
+				/* left: 200px; */
+			}
+			.box11 {
+				height: 100px;
+				width: 100px;
+				background-color: greenyellow;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -50px;
+				margin-left:-50px;
+			}
+			.box12 {
+				height: 100px;
+				width: 100px;
+				background-color: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -50px;
+				margin-left:-50px;
+			}
+			.box13 {
+				background-color: pink;
+				/* 块级元素添加绝对或者固定定位属性以后，如果不添加宽度和高度，则为内容的默认高度和宽度 */
+				position: fixed;
+				/* height: 20px; */
+			}
+			span{
+				background-color: skyblue;
+				/* 行内元素添加绝对或者固定定位属性以后，可以直接设置行高和宽度 */
+				position: absolute;
+				height: 50px;
+				width: 80px;
+			}
+			.box14 {
+				float: right;
+				width: 200px;
+				height: 300px;
+				background: #00FFFF;
+				margin-right: 100px;
+			}
+			.box15 {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="box1">1 -->
+			<!-- 绝对定位：当父元素没有定位或者没有父元素时，根据文档来定位 -->
+		<!-- 	<div class="box2">2</div>
+			<div class="box3">3</div>
+		</div> -->
+		
+		
+		<!-- <div class="box4">4</div>
+		<div class="box5">5广告</div> -->
+		<!-- 测试z-index的 -->
+		<!-- <div class="box6">我是粘性定位的盒子</div>
+		<div class="box7">7</div>
+		<div class="box8">8</div>
+		<div class="box9">9</div> -->
+		<!-- 测试水平居中和垂直居中的 -->
+		<!-- <div class="box10">10
+			<div class="box11">11</div>
+			<div class="box12">12</div>
+		</div> -->
+		<!-- 测试定位元素的特性 -->
+		<div class="box13">123</div>
+		<span>567</span>
+		<div class="box14">我是14，我是浮动的，所有文字会环绕我</div>
+		<div class="box15">我是绝对定位（固定定位）我会压住文字标准流</div>
+		<p>指令名称 : chown 使用权限 : root(一般来说，这个指令只有是由系统管理者(root)所使用，一般使用者没有权限可以改变别人的文件拥有者，也没有权限可以自己的文件拥有者改设为别人。只有系统管理者(root)才有这样的权限。)
+使用方式 : chown [-cfhvR] [--help] [--version] user[:group] file…
+利用 chown 可以将档案的拥有者加以改变。这个指令只有是由系统管理者(root)所使用，一般使用者没有权限可以改变别人的档案拥有者，也没有权限可以自己的档案拥有者改设为别人。只有系统管理者(root)才有这样的权限。
+参数：
+
+-c或-change：作用与-v相似，但只传回修改的部分
+-f或–quiet或–silent：不显示错误信息
+-h或–no-dereference：只对符号链接的文件做修改，而不更改其他任何相关文件
+-R或-recursive：递归处理，将指定目录下的所有文件及子目录一并处理
+-v或–verbose：显示指令执行过程
+–dereference：作用和-h刚好相反
+–help：显示在线说明
+–reference=<参考文件或目录>：把指定文件或目录的所有者与所属组，统统设置成和参考文件或目录的所有者与所属组相同
+–version：显示版本信息
+chown命令使用举例：（像我用的vps，就要先ssh登录）
+
+# chown [-R] [用户名称] [文件或目录]
+# chown [-R] [用户名称:组名称] [文件或目录]
+
+范例1：将test3.txt文件的属主改为test用户。
+# ls -l test3.txt
+-rw-r–r– 1 test root 0 2009-10-23 9:59 test3.txt
+# chown test:root test3.txt
+# ls -l test3.txt
+-rw-r–r– 1 test root 0 2009-10-23 9:59
+
+范例2：chown所接的新的属主和新的属组之间可以使用:连接，属主和属组之一可以为空。如果属主为空，应该是“:属组”；如果属组为空，“:”可以不用带上。
+
+# ls -l test3.txt
+-rw-r–r– 1 test root 0 2009-10-23 9:59 test3.txt
+
+# chown :test test3.txt <==把文件test3.txt的属组改为test
+# ls -l test3.txt
+-rw-r–r– 1 test test 0 2009-10-23 9:59 test3.txt
+
+范例3：chown也提供了-R参数，这个参数对目录改变属主和属组极为有用，可以通过加 -R参数来改变某个目录下的所有文件到新的属主或属组。
+# ls -l testdir <== 查看testdir目录属性
+drwxr-xr-x 2 usr root 0 2009-10-56 10:38 testdir/ <==文件属主是usr用户，属组是 root用户
+# ls -lr testdir <==查看testdir目录下所有文件及其属性
+total 0
+-rw-r–r– 1 usr root 0 2009-10-23 10:38 test1.txt
+-rw-r–r– 1 usr root 0 2009-10-23 10:38 test2.txt
+-rw-r–r– 1 usr root 0 2009-10-23 10:38 test3.txt
+# chown -R test:test testdir/ <==修改testdir及它的下级目录和所有文件到新的用户和用户组
+# ls -l testdir
+drwxr-xr-x 2 test test 0 2009-10-23 10:38 testdir/
+# ls -lr testdir
+total 0
+-rw-r–r– 1 test test 0 2009-10-23 10:38 test1.txt
+-rw-r–r– 1 test test 0 2009-10-23 10:38 test2.txt
+-rw-r–r– 1 test test 0 2009-10-23 10:38 test3.txt
+</p>
+	</body>
+</html>

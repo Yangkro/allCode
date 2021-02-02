@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">发送Ajax请求</button>
+	<script type="text/javascript">
+		// Ajax状态码: 表示Ajax请求的过程状态 ajax对象返回的
+		// Http状态码: 表示请求的处理结果 是服务器端返回的
+			let btn = document.getElementById('btn')
+			btn.addEventListener('click', function(){
+				let xhr = new XMLHttpRequest()
+				xhr.open('get', 'http://localhost:3000/error')
+				xhr.send()
+				xhr.onload = function(){
+					console.log(xhr.responseText)
+					console.log('HTTP状态码：',xhr.status)
+					if(xhr.status === 400){
+						let str = `<h2>NOT FOUND 404</h2>`
+						document.body.innerHTML = str
+					}
+				}
+				// 当发送错误的时候会发触发onerror事件
+				xhr.onerror = function(){
+					alert('网络中断，无法发送Ajax请求')
+				}
+			}) 
+	</script>
+</body>
+</html>

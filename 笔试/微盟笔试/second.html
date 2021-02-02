@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function isEctopic( first ,  second ) {
+      if(first.length != second.length){
+        return false
+      }else {
+        let flage = true
+        let hash = []
+        for(let i = 0; i < first.length; i++){
+          let s = first[i]
+          if(second.includes(s)){
+            // 如果存在就替换掉
+            second = second.replace(s, "")
+            // console.log(second)
+          }else {
+            return false
+          }
+        }
+        if(second.length){
+          return false
+        }else {
+          return true
+        }
+      }
+    }
+    console.log(isEctopic("abc","cba"))
+  </script>
+</body>
+</html>

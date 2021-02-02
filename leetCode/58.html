@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var lengthOfLastWord = function(s) {
+			    var array = s.split(" ");
+				console.log(array);
+				var result = 0;
+			    if(array.length === 0){
+			        return 0;
+			    }else {
+			        for(var i = array.length - 1; i >=0; i--){
+			            if(array[i].length != 0){
+							result = array[i].length
+			                return result;
+			                break;
+			            }
+			        }
+			    }
+				return result;
+			};
+			console.log(lengthOfLastWord(" g "));
+		</script>
+	</body>
+</html>

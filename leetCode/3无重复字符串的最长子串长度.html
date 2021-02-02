@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <script type="text/javascript">
+		// 解法一
+			var lengthOfLongestSubstring = function(s) {
+				let res = 1;
+				let l = 0;
+				var newStr = "";
+				for(let i = 0; i < s.length - 1; i++){
+					for(let j = i + 1; j < s.length; j++){
+						let str = s.slice(i, j);
+						if(str.includes(s.charAt(j))){
+							// res++;
+							break;
+						}else {
+							res = Math.max(res, str.length);
+						}
+					}
+					
+				}
+				return res + 1;
+			};
+			console.log(lengthOfLongestSubstring("pwwkew"));
+		</script> -->
+		<script>
+			// 解法二
+		var lengthOfLongestSubstring = function(s) {
+			let str = '', len = 0
+			for(let v of s) {
+					if(!str.includes(v)) {
+							str += v
+					} else {
+						// console.log(str.indexOf(v)+1, "->"+str.slice(1)+1)
+							str = str.slice(str.indexOf(v)+1) + v
+							console.log(str)
+					}
+					len = Math.max(len, str.length)
+			}
+			return len
+		};
+		console.log(lengthOfLongestSubstring("pwwkew"))
+		</script>
+	</body>
+</html>
